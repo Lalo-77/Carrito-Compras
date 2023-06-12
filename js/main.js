@@ -176,7 +176,59 @@ const filtrarPorNutricion =platos.filter(alimento=>alimento.nutricion ==='natura
     (["la Fortaleza","2000","Especial","1900","Rubi","2500","Hamburguesa","2500","jugo de zanahoria","1200","Ensalada palta queso tomate y cebolla","1800",
     "pastel de brocoli con queso","1500","Pollo salteado con brocoli y soja","1800","Salmon con arroz cebolla y pepino","2000","Frutas","1200"]);
 
+    mostrarPlatos = (menu) => {
+    menu.forEach( platos =>{
 
+const cardPlato = document.createElement('div');
+    cardPlato.setAttribute('id', 'tarjeta-plato');
+    cardPlato.innerHTML =
+    contenedorPlatos.appendChild(cardPlato);
+
+    })
+const btnComprar =document.querySelectorAll('.btn-compra');
+    btnComprar.forEach(el =>{
+        el.addEventListener('click', (e)=>{
+        agregarAlCarrito(e.target.id)
+        });
+    })
+}
+let todoslosPlatos = platos.map((plato) => plato.nombre + "" + 
+plato.precio + "$");
+alert(todoslosPlatos.join(" - ")) 
+
+const contenedorPlatos = document.getElementById('contenedorPlatos')
+    platos.forEach(plato => {
+    contenedorPlatos,appendChild(platos)
+
+const cardMenu = document.createElement("div")
+    cardMenu.innerHTML`
+        <div>plato.nombre</div>
+        <button id=plato1 "comprar-plato1${menu.id}">Comprar</button>
+        `
+        menuContainer.append(cardMenu)
+const botonComprar= document.getElementById("comprar" + plato.id)
+
+    botonComprar.addEventListener("click", () => {
+
+        carrito.push(plato)
+    })
+
+    })
+
+platos= document.getElementById('platos')
+
+for (const nombre of platos) {
+const li= document.cntreateElement('li')
+    li.innerText= platos
+    platos.appendChild(li)
+}
+platos=document.getElementsByClassName('plato')
+for (const plato of platos){
+    console.log(plato.innerHTML);
+}
+
+platos.forEach(plato=>{
+})
 btnComprar1.addEventListener('click', ()=>{
     console.log("Seleccionaste tu pedido");
 })
@@ -208,4 +260,6 @@ btnComprar10,addEventListener('click', () =>{
     console.log("Seleccionaste tu pedido");
 })
 
-
+const inputM = document.getElementsByTagName('input')
+inputM[0].value = "Asado"
+console.log(inputM[0]);
