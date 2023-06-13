@@ -132,7 +132,6 @@ const seleccion = parseInt(prompt("Ingrese el numero de plato que decea, ingrese
 
 if (seleccion  === 0 || isNaN(seleccion)) {
     calcularTotal();
-    return;
 }
 const buscarPlato = platos.find(plato => plato.id === seleccion);
 
@@ -323,7 +322,7 @@ amarillo.addEventListener('submit', function (e){
     let email = document.getElementById('email').nodeValue
     console.log(email)
 })
-const doc  = document;
+const doc = document;
 
 export default function searchFilters(input,selector){
     doc.addEventListener("keyup",(e)=> {
