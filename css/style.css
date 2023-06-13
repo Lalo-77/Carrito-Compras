@@ -38,8 +38,8 @@ width: 90%;
     color:red;
 }
 .logo-png {
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 30px;
 }
 .logo img{
     width: 30px;
@@ -367,4 +367,12 @@ border-radius: 50px;
     height: 40px;
     margin: 10px;
     border-radius: 10px;
+}
+.card{
+    background-color: var(--second-color);
+    color:var(--main-color);
+    transition: all 0.3s ease-out;
+}
+.filter {
+    display:none;
 }

@@ -201,7 +201,7 @@ const contenedorPlatos = document.querySelector('#contenedorPlatos');
 
 const mostrarPlatos=(data) => {
     data.forEach(plato =>{
-const cardPlato = document.createElement('article');
+const cardPlato = document.createElement('div');
     cardPlato.setAttribute('id', 'tarjetaPlato');
     cardPlato.innerHTML=`
         <img-class="plato-img" src="${plato?.img}" alt="${plato?.nombre}" style="width:75px"
@@ -214,12 +214,12 @@ const cardPlato = document.createElement('article');
         `;
     contenedorPlatos.appendChild(cardPlato);
 })
+
 const btnComprar = document.querySelectorAll('.btn-compra');
     btnComprar.forEach(el =>{
-    el
-    .addEventListener('click',(e) =>{
+    el.addEventListener('click',(e) =>{
         agregarAlCarrito(e.target.id)
-    })
+    });
 })
 };
 
@@ -323,3 +323,18 @@ amarillo.addEventListener('submit', function (e){
     let email = document.getElementById('email').nodeValue
     console.log(email)
 })
+const doc  = document;
+
+export default function searchFilters(input,selector){
+    doc.addEventListener("keyup",(e)=> {
+    if(e.target.matches(input)){
+    console.log(e.key);
+    console.log(e,target.value);
+    doc.querySelectorAll(selector),forEach((el) =>
+    el.textContent.toLowerCase().includes(e.target.value)
+    ? el.classList.remmove("filter")
+    :e.classList.add("filter")
+    );
+}
+});
+}
