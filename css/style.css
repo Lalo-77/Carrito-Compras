@@ -336,3 +336,35 @@ border-radius: 50px;
 .click{
     margin-left: 30px;
 }
+.btn-enviar{
+    color:black;
+    background-color:greenyellow;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.btn-limpiar{
+    color:black;
+    background-color:greenyellow;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.btn-dos{
+    color:black;
+    background-color: greenyellow;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.btn-2lim{
+    color:black;
+    background-color: greenyellow;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}

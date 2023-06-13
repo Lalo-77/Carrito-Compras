@@ -126,8 +126,6 @@ const platos = [
     ]
 const carrito = []
 
-function mostrarPlatos () {
-
 const listado = platos.reduce((acc, el)=>acc +=`${el.id}-${el.nombre}-precio:$${el.precio}\n`,"0");
 
 const seleccion = parseInt(prompt("Ingrese el numero de plato que decea, ingrese 'no' para salir\n" + listado));
@@ -153,7 +151,6 @@ if(continuarCompra){
     calcularTotal();
     }
 
-}
 function calcularTotal(){
 
 const total = carrito.reduce((acc,el)=> acc + el.precio, 0);
@@ -176,6 +173,10 @@ const filtrarPorNutricion =platos.filter(alimento=>alimento.nutricion ==='natura
     (["la Fortaleza","2000","Especial","1900","Rubi","2500","Hamburguesa","2500","jugo de zanahoria","1200","Ensalada palta queso tomate y cebolla","1800",
     "pastel de brocoli con queso","1500","Pollo salteado con brocoli y soja","1800","Salmon con arroz cebolla y pepino","2000","Frutas","1200"]);
 
+    function saludar(nombre, apellido){
+        console.log("Hola"+ "Nombre" + " " + "Apellido");
+    }
+
     mostrarPlatos = (menu) => {
     menu.forEach( platos =>{
 
@@ -196,25 +197,49 @@ let todoslosPlatos = platos.map((plato) => plato.nombre + "" +
 plato.precio + "$");
 alert(todoslosPlatos.join(" - ")) 
 
-const contenedorPlatos = document.getElementById('contenedorPlatos')
-    platos.forEach(plato => {
-    contenedorPlatos,appendChild(platos)
+const contenedorPlatos = document.querySelector('#contenedorPlatos');
 
-const cardMenu = document.createElement("div")
-    cardMenu.innerHTML`
-        <div>plato.nombre</div>
-        <button id=plato1 "comprar-plato1${menu.id}">Comprar</button>
-        `
-        menuContainer.append(cardMenu)
-const botonComprar= document.getElementById("comprar" + plato.id)
+const mostrarPlatos=(data) => {
+    data.forEach(plato =>{
+const cardPlato = document.createElement('article');
+    cardPlato.setAttribute('id', 'tarjetaPlato');
+    cardPlato.innerHTML=`
+        <img-class="plato-img" src="${plato?.img}" alt="${plato?.nombre}" style="width:75px"
+        <div class="plato-description">
+        <h5 class="obra-nombre">${plato?.nombre}</h5>
+        <h5 class="obra-autor">${plato?.autor}</h5>
 
-    botonComprar.addEventListener("click", () => {
-
-        carrito.push(plato)
+        <button id='${plato.id}' class="btn-compra">COMPRAR</button>
+        </div>
+        `;
+    contenedorPlatos.appendChild(cardPlato);
+})
+const btnComprar = document.querySelectorAll('.btn-compra');
+    btnComprar.forEach(el =>{
+    el
+    .addEventListener('click',(e) =>{
+        agregarAlCarrito(e.target.id)
     })
+})
+};
 
-    })
+function agregarAlCarrito(id){
+    console.log(id);
+    let platoEncontrado = platos.find(plato=>plato.id === parceInt(id));
 
+carrito.push(platoEncontrado)
+console.log(carrito)
+}
+const existe = carrito.some(plato => plato.id === parceInt(id));
+
+if (existe) {
+
+}else{
+let platoEncontrado = platos.find(platos=> platos.id === parseInt(id));
+    carrito.push(platoEncontrado);
+}
+
+carrito.map(plato => plato.id === parceInt(id));
 platos= document.getElementById('platos')
 
 for (const nombre of platos) {
@@ -263,3 +288,38 @@ btnComprar10,addEventListener('click', () =>{
 const inputM = document.getElementsByTagName('input')
 inputM[0].value = "Asado"
 console.log(inputM[0]);
+
+platos.forEach(plato => {
+    contenedorPlatos,appendChild(platos)
+
+const cardMenu = document.createElement("div")
+    cardMenu.innerHTML
+    
+        menuContainer.append(cardMenu)
+const botonComprar= document.getElementById("comprar" + plato.id)
+
+    botonComprar.addEventListener("click", () => {
+
+        carrito.push(plato)
+    })
+})
+const amarillo= document.getElementById('amari');
+amarillo.addEventListener('submit',function(e){
+    e.preventDefault();
+
+    let nombre= document.getElementById('nombre').value
+    console.log(nombre)
+}) 
+
+amarillo = document.getElementById('amari');
+amarillo.addEventListener('submit', function (e){
+    e.preventDefault();
+    let apellido= document.getElementById('apellido').value
+    console.log(apellido)
+});
+amarillo = document.getElementById('amari');
+amarillo.addEventListener('submit', function (e){
+    e.preventDefault();
+    let email = document.getElementById('email').nodeValue
+    console.log(email)
+})

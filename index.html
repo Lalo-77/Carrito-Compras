@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="mostrador">
-    <div class="encab">
-
+        <div class="encab">
             <div class="row">
                 <div class="columnas">
                     <span id="logo"></span>
@@ -23,7 +22,6 @@
                 <ul class="navBar">
                     <li class="submenu">
                         <img src="./assets/img/carrito.png">
-
                             <div id="carrito">
                                 <tab id="listaCarrito" class="u-full-width"> 
                                     <a href="#" id="vaciarCarrito" class="boton u-full-width"></a>
@@ -33,16 +31,19 @@
                 </ul>
             </div>
         </div>
+    <header>
     </header>
     <main class="igual">
-        <section class="titulo">
+        <button onclick='saludar("nombre","apellido")'> HOLA TE DAMOS LA BIENVENIDA </button>
+        <div id="contenrdorPlatos">
+            <section class="titulo">
             <h1>     </h1>
-        </section>
-        <section class="menu">
+            </section>
+            <section class="menu">
             <h2>NUESTRO MENU</h2>
-        </section>
-        <section class="menues">
-        <div id="contenedorPlatos"> 
+            </section>
+            <section class="menues">
+        
             <div class="row">
                 <div class="card" style="width: 18rem;">
                     <img src="./assets/img/brooke.jpg" class="card-img-top"  id="plato1" alt="...">
@@ -122,8 +123,8 @@
                 <div class="card-body">
                 </div>
             </div>
-        </section>
-        <section class="row2" >  
+            </section>
+            <section class="row2" >  
             <div class="card" style="width: 18rem;">
                 <img src="./assets/img/varios.jpg" class="card-img-top"  id="plato6" alt="...">
                 <div class="card-body">
@@ -202,10 +203,11 @@
             </dv>
                 <div class="card-body">
                 </div>
-
         </div>
-        </section> 
-            <div id="listaProductos" class="container"></div>
+            </section> 
+        </div>
+            <div id="listaProductos" class="container">
+            </div>
             <section class="dtos">
                 <div class="uuno">
                     <div class="Añadir">
@@ -239,8 +241,8 @@
                                     <label for="santa_fe" class="santa_fe">tarjeta Santa Fe
                                     <input type="radio" id="con tarjeta" name="opinion" value="con tarjerta">
                                     </label>
-                                    <input  class="click" type="submit">
-                                    <input type="reset">
+                                    <button type="submit" name="btn" class="btn-enviar">ENVIAR</button>
+                                    <button type="reset" name="btn-limpiar" class="btn-limpiar">LIMPIAR</button>
                                 </fieldset>
                                 </form>
                             </form>
@@ -248,13 +250,13 @@
                     </div>
                 </div>
                     <div class="doss">
-                        <form class="cja" action="" method="post">
+                        <form id="cja" action="" method="post">
                             <fieldset>
                                 <div class="cja2">
                                     <div class="ing">
-                                        <h2>Ingresa a tu cuenta</h2>
+                                        <h2 id="cuenta">Ingresa a tu cuenta</h2>
                                         </div>
-                                            <form action="amarillo" method="post">
+                                            <form id="amarillo" method="post">
                                                 <fieldset class="escribir">
                                                     <legend class="informac">Ingresa tus datos personales</legend>
                                                         <label class="nombre">
@@ -274,10 +276,11 @@
                                                         </label>
                                                 </fieldset>
                                                 <fieldset>
-                                                    <legend>guardar</legend>
+                                                    <legend></legend>
                                                     <label for="si seguro"></label>
-                                                    <input type="submit">
-                                                    <input type="reset">
+                                                    <button type="submit"name="btn-2a" class="btn-dos">ENVIAR</button>
+                                                    <button type="reset" name="btn-borrar" class="btn-2lim">LIMPIAR</button>
+                                                    <a ref="index.html"></a>
                                                 </fieldset>
                                             </form>
                                     </div>
