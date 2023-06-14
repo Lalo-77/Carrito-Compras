@@ -1,5 +1,4 @@
-alert("Bienvenido al Restaurant La Fortaleza");
-
+console.log("saludar" +" "+ "Bienvenido al Restaurant La Fortaleza");
 // cristian nuñez
 
 const platos = [
@@ -142,7 +141,7 @@ const buscarPlato = platos.find(plato => plato.id === seleccion);
     console.log(carrito);
 
 const continuarCompra = confirm("Decea seleccionar algo mas?/n");
-
+const menu = platos
 if(continuarCompra){
     mostrarPlatos();
 
@@ -152,10 +151,13 @@ if(continuarCompra){
 
 function calcularTotal(){
 
-const total = carrito.reduce((acc,el)=> acc + el.precio, 0);
+const total = carrito.reduce 
+console.log(carrito);
+((acc,el)=> acc + el.precio, 0);
 
     alert(`El total a pagar por su compra es: $${total}`);
 }
+
 filtroPorPrecio = platos.filter(alimento =>alimento.precio < 2000);
 
 const filtroPorCategoria = platos.filter(alimento =>alimento.categoria ==='plato principal');
@@ -166,14 +168,12 @@ const filtrarPorNutricion =platos.filter(alimento=>alimento.nutricion ==='natura
 
     console.log(filtroPorPrecio);
 
-    mostrarPlatos()
-
     const filtrarPorNombre1 = new Array
     (["la Fortaleza","2000","Especial","1900","Rubi","2500","Hamburguesa","2500","jugo de zanahoria","1200","Ensalada palta queso tomate y cebolla","1800",
     "pastel de brocoli con queso","1500","Pollo salteado con brocoli y soja","1800","Salmon con arroz cebolla y pepino","2000","Frutas","1200"]);
 
     function saludar(nombre, apellido){
-        console.log("Hola"+ "Nombre" + " " + "Apellido");
+        console.log("Hola"+ "saludar");
     }
 
     mostrarPlatos = (menu) => {
@@ -182,7 +182,7 @@ const filtrarPorNutricion =platos.filter(alimento=>alimento.nutricion ==='natura
 const cardPlato = document.createElement('div');
     cardPlato.setAttribute('id', 'tarjeta-plato');
     cardPlato.innerHTML =
-    contenedorPlatos.appendChild(cardPlato);
+    mostrarPlatos.appendChild(cardPlato);
 
     })
 const btnComprar =document.querySelectorAll('.btn-compra');
@@ -221,7 +221,6 @@ const btnComprar = document.querySelectorAll('.btn-compra');
     });
 })
 };
-
 function agregarAlCarrito(id){
     console.log(id);
     let platoEncontrado = platos.find(plato=>plato.id === parceInt(id));
@@ -229,20 +228,21 @@ function agregarAlCarrito(id){
 carrito.push(platoEncontrado)
 console.log(carrito)
 }
-const existe = carrito.some(plato => plato.id === parceInt(id));
+const existe = carrito.some(plato => platos.id === parceInt(id));
 
 if (existe) {
+    platoEnCarrito.cantidad++
 
 }else{
 let platoEncontrado = platos.find(platos=> platos.id === parseInt(id));
     carrito.push(platoEncontrado);
 }
 
-carrito.map(plato => plato.id === parceInt(id));
+carrito.map(platos => platos.id === parceInt(id));
 platos= document.getElementById('platos')
 
 for (const nombre of platos) {
-const li= document.cntreateElement('li')
+const li= document.createElement('li')
     li.innerText= platos
     platos.appendChild(li)
 }
@@ -250,7 +250,20 @@ platos=document.getElementsByClassName('plato')
 for (const plato of platos){
     console.log(plato.innerHTML);
 }
+function actualizarCarrito(e){
+    platos=e.target;
+const id=platos.getAtribute('data-id');
+    parceFloat(platos.getAtribute('data-precio'));
 
+const platoEnCarrito= carrito.platos.find(p.id===id);
+if (platoEnCarrito){
+    platoEnCarrito.cantidad++;
+}else {
+        carrito.plato.push({id,precio,cantidad:1});
+
+    }
+carrito,total+=precio;
+}
 platos.forEach(plato=>{
 })
 btnComprar1.addEventListener('click', ()=>{
@@ -284,11 +297,7 @@ btnComprar10,addEventListener('click', () =>{
     console.log("Seleccionaste tu pedido");
 })
 
-const inputM = document.getElementsByTagName('input')
-inputM[0].value = "Asado"
-console.log(inputM[0]);
-
-platos.forEach(plato => {
+    platos.forEach(plato => {
     contenedorPlatos,appendChild(platos)
 
 const cardMenu = document.createElement("div")
@@ -303,17 +312,17 @@ const botonComprar= document.getElementById("comprar" + plato.id)
     })
 })
 const amarillo= document.getElementById('amari');
-amarillo.addEventListener('submit',function(e){
+    amarillo.addEventListener('submit',function(e){
     e.preventDefault();
 
-    let nombre= document.getElementById('nombre').value
+let nombre= document.getElementById('nombre').value
     console.log(nombre)
 }) 
 
-amarillo = document.getElementById('amari');
-amarillo.addEventListener('submit', function (e){
+    amarillo = document.getElementById('amari');
+    amarillo.addEventListener('submit', function (e){
     e.preventDefault();
-    let apellido= document.getElementById('apellido').value
+let apellido= document.getElementById('apellido').value
     console.log(apellido)
 });
 amarillo = document.getElementById('amari');
@@ -324,7 +333,7 @@ amarillo.addEventListener('submit', function (e){
 })
 const doc = document;
 
-export default function searchFilters(input,selector){
+function searchFilters(input,selector){
     doc.addEventListener("keyup",(e)=> {
     if(e.target.matches(input)){
     console.log(e.key);
