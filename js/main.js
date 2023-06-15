@@ -201,7 +201,7 @@ this.descripcion = descripcion;
 this.categoria = categoria;
 this.precio = parceFloat(precio);
 if (!img){
-    this.img="https://via.placeholder.com/300";
+    this.img="../assets/img/not-found-image-15383864787lu.jpg";
 }else {
     this.img=img;
 }
