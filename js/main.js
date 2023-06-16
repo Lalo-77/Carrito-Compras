@@ -125,8 +125,8 @@ let platoEncontrado = plato.find(plato => plato.id == id);
     carrito.push(platoEncontrado);
     }
 
-/*carrito.map(platos => platos.id === parseInt(id));
-plato= document.getElementById('plato')*/
+carrito.map(platos => platos.id === parseInt(id));
+plato= document.getElementById('plato')
 
 const listado = plato.reduce((acc, el)=>acc +=`${el.id}-${el.nombre}-precio:$${el.precio}\n`,"0");
 
@@ -190,8 +190,8 @@ const filtrarPorNombre1 = new Array
     (["la Fortaleza","2000","Especial","1900","Rubi","2500","Hamburguesa","2500","jugo de zanahoria","1200","Ensalada palta queso tomate y cebolla","1800",
     "pastel de brocoli con queso","1500","Pollo salteado con brocoli y soja","1800","Salmon con arroz cebolla y pepino","2000","Frutas","1200"]);
 
-function saludar(nombre, apellido){
-        console.log("Hola"+ "saludar");
+function saludo (nombre, apellido){
+        console.log("Hola" + "Te damos la Bienvenida");
     }
 let todoslosPlatos = plato.map((plato) => plato.nombre + "" + 
 plato.precio + "$");
