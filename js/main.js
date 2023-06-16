@@ -1,5 +1,3 @@
-console.log("saludar" +" "+ "Bienvenido al Restaurant La Fortaleza");
-// cristian nuñez
 
 const plato = [
     {
@@ -8,7 +6,7 @@ const plato = [
         img:"./assets/img/brooke.jpg",
         precio: 2000,
         descripcion:"calorias:150,carbohidratos:60,fibras:30,grasasSaturadas:0,",
-        categoria: "plato principal",
+        categoria: "break",
         },
     {
         id:2,
@@ -40,7 +38,7 @@ const plato = [
         img:"./assets/img/jugo de zanahoria.jpg",
         precio:1200,
         descripcion:"calorias:130,carbohidratos:70,fibras:40,grasasSaturadas:0,",
-        categoria:"postre",
+        categoria:"jugo",
         },
     {
         id:6,
@@ -48,7 +46,7 @@ const plato = [
         img:"./assets/img/varios.jpg", 
         precio:1800,
         descripcion:"calorias:120,carbohidratos:30,fibras:20,grasasSaturadas:0,",
-        categoria:"Plato princioal",
+        categoria:"Plato principal",
         },
     {
         id:7,
@@ -84,15 +82,58 @@ const plato = [
         },
     ]
 const carrito = []
+const contenedorPlatos = document.querySelector('#contenedorPlatos');
+const mostrarPlatos=() => {
+    plato.forEach(plato =>{
+    const cardPlato = document.createElement('div');
+    cardPlato.setAttribute('id', 'cardPlato');
+    cardPlato.innerHTML=`
+        <img src="${plato.img}">
+        <div class ="plato-description">
+        <h5>${plato.nombre}</h5>
+        <h5>${plato.categoria}</h5>
+        <button id='${plato.id}' class="btn-compra">COMPRAR</button>
+        </div>
+        `;
+    contenedorPlatos.appendChild(cardPlato);
+})
 
-const listado = platos.reduce((acc, el)=>acc +=`${el.id}-${el.nombre}-precio:$${el.precio}\n`,"0");
+const btnComprar = document.querySelectorAll('.btn-compra');
+    btnComprar.forEach(el=> {
+    el.addEventListener('click',(e)=> {
+    agregarAlCarrito(e.target.id)
+    });
+})
+};
+mostrarPlatos()
 
-const seleccion = parseInt(prompt("Ingrese el numero de plato que decea, ingrese 'no' para salir\n" + listado));
+function agregarAlCarrito(id){
+    console.log(id);
+let platoEncontrado = plato.find(plato=>plato.id == id);
+
+carrito.push(platoEncontrado)
+console.log(carrito)
+}
+const existe = carrito.some(plato => plato.id == id);
+
+if (existe) {
+    platoEnCarrito.cantidad++
+
+}else{
+
+let platoEncontrado = plato.find(plato => plato.id == id);
+    carrito.push(platoEncontrado);
+    }
+
+/*carrito.map(platos => platos.id === parseInt(id));
+plato= document.getElementById('plato')*/
+
+const listado = plato.reduce((acc, el)=>acc +=`${el.id}-${el.nombre}-precio:$${el.precio}\n`,"0");
 
 if (seleccion  === 0 || isNaN(seleccion)) {
     calcularTotal();
 }
-const buscarPlato = platos.find(plato => plato.id === seleccion);
+const buscarPlato = plato.find(plato => plato.id === seleccion);
 
     console.log(buscarPlato);
 
@@ -100,11 +141,9 @@ const buscarPlato = platos.find(plato => plato.id === seleccion);
 
     console.log(carrito);
 
-const continuarCompra = confirm("Decea seleccionar algo mas?/n");
-const menu = platos
+const menu = plato
 if(continuarCompra){
     mostrarPlatos();
-
 }else{
     calcularTotal();
     }
@@ -115,23 +154,22 @@ const total = carrito.reduce
 console.log(carrito);
 ((acc,el)=> acc + el.precio, 0);
 
-    alert(`El total a pagar por su compra es: $${total}`);
 }
 function filtrarPorPrecio(filtro){
 const menu = menu.filter((el) =>el.precio <filtro)
 return menu;
 };
-let ingreso= prompt("ingrese un precio");
-let param = prompt("ingresa criterio");
+//let ingreso= prompt("ingrese un precio");
+//let param = prompt("ingresa criterio");
 const menorPrecio=filtrarPorPrecio
 (ingreso)
 console.log(menorPrecio);
 
 function filtrar(plato, filter, param){
-    platos.filter(el =>{
+    plato.filter(el =>{
 if (param === "id"){
 
-    return el.id == filter
+return el.id == filter
 }else if(param ==='precio'){
     
     return el.precio <= filter
@@ -142,59 +180,24 @@ if (param === "id"){
 }
 console.log(filtrar(menu,ingreso,param));
 
-const filtroPorCategoria = platos.filter(alimento =>alimento.categoria ==='plato principal');
+const filtroPorCategoria = plato.filter(alimento =>alimento.categoria ==='plato principal');
 let 
-const filtrarPorNutricion =platos.filter(alimento=>alimento.nutricion ==='natural');
+const filtrarPorNutricion =plato.filter(alimento=>alimento.nutricion ==='natural');
 
     console.log(filtrarPorNutricion);
 
-    
-    const filtrarPorNombre1 = new Array
+const filtrarPorNombre1 = new Array
     (["la Fortaleza","2000","Especial","1900","Rubi","2500","Hamburguesa","2500","jugo de zanahoria","1200","Ensalada palta queso tomate y cebolla","1800",
     "pastel de brocoli con queso","1500","Pollo salteado con brocoli y soja","1800","Salmon con arroz cebolla y pepino","2000","Frutas","1200"]);
 
-    function saludar(nombre, apellido){
+function saludar(nombre, apellido){
         console.log("Hola"+ "saludar");
     }
-
-    mostrarPlatos = (menu) => {
-    menu.forEach( platos =>{
-
-const cardPlato = document.createElement('div');
-    cardPlato.setAttribute('id', 'tarjeta-plato');
-    cardPlato.innerHTML =
-    mostrarPlatos.appendChild(cardPlato);
-
-    })
-const btnComprar =document.querySelectorAll('.btn-compra');
-    btnComprar.forEach(el =>{
-        el.addEventListener('click', (e)=>{
-        agregarAlCarrito(e.target.id)
-        });
-    })
-}
-let todoslosPlatos = platos.map((plato) => plato.nombre + "" + 
+let todoslosPlatos = plato.map((plato) => plato.nombre + "" + 
 plato.precio + "$");
 alert(todoslosPlatos.join(" - ")) 
 
-const contenedorPlatos = document.querySelector('#contenedorPlatos');
-
-const mostrarPlatos=(data) => {
-    data.forEach(plato =>{
-const cardPlato = document.createElement('div');
-    cardPlato.setAttribute('id', 'tarjetaPlato');
-    cardPlato.innerHTML=`
-        <img-class="plato-img" src="${plato?.img}" alt="${plato?.nombre}" style="width:75px"
-        <div class="plato-description">
-        <h5 class="obra-nombre">${plato?.nombre}</h5>
-        <h5 class="obra-autor">${plato?.autor}</h5>
-
-        <button id='${plato.id}' class="btn-compra">COMPRAR</button>
-        </div>
-        `;
-    contenedorPlatos.appendChild(cardPlato);
-})
-function menu(nombre,descripcion,categoria,precio,img){
+function seleccion(nombre,descripcion,categoria,precio,img){
 this.id = menu.length + 1;
 this.nombre = nombre;
 this.descripcion = descripcion;
@@ -204,7 +207,7 @@ if (!img){
     this.img="../assets/img/not-found-image-15383864787lu.jpg";
 }else {
     this.img=img;
-}
+    }
 }
 const card1= new plato (
 "id:1",
@@ -276,90 +279,27 @@ const card10 = plato(
 "categoria:postre");
 
 console.log(menu)
-const btnComprar = document.querySelectorAll('.btn-compra');
-    btnComprar.forEach(el =>{
-    el.addEventListener('click',(e) =>{
-        agregarAlCarrito(e.target.id)
-    });
-})
-};
-function agregarAlCarrito(id){
-    console.log(id);
-    let platoEncontrado = platos.find(plato=>plato.id === parceInt(id));
 
-carrito.push(platoEncontrado)
-console.log(carrito)
-}
-const existe = carrito.some(plato => platos.id === parceInt(id));
-
-if (existe) {
-    platoEnCarrito.cantidad++
-
-}else{
-let platoEncontrado = platos.find(platos=> platos.id === parseInt(id));
-    carrito.push(platoEncontrado);
-}
-
-carrito.map(platos => platos.id === parceInt(id));
-platos= document.getElementById('platos')
-
-for (const nombre of platos) {
-const li= document.createElement('li')
-    li.innerText= platos
-    platos.appendChild(li)
-}
-platos=document.getElementsByClassName('plato')
-for (const plato of platos){
-    console.log(plato.innerHTML);
-}
 function actualizarCarrito(e){
-    platos=e.target;
-const id=platos.getAtribute('data-id');
-    parceFloat(platos.getAtribute('data-precio'));
+    plato=e.target;
+const id=plato.getAtribute('data-id');
+    parceFloat(plato.getAtribute('data-precio'));
 
-const platoEnCarrito= carrito.platos.find(p.id===id);
+const platoEnCarrito= carrito.plato.find(p.id===id);
 if (platoEnCarrito){
     platoEnCarrito.cantidad++;
 }else {
         carrito.plato.push({id,precio,cantidad:1});
-
     }
 carrito,total+=precio;
 }
-platos.forEach(plato=>{
+plato.forEach(plato=>{
 })
 btnComprar1.addEventListener('click', ()=>{
     console.log("Seleccionaste tu pedido");
 })
-btnComprar2.addEventListener('click', ()=>{
-    console.log("seleccionaste tu pedido"); 
-})
-btnComprar3,addEventListener('click', () =>{
-    console.log("Seleccionaste tu pedido");
-})
-btnComprar4,addEventListener('click', () =>{
-    console.log("Seleccionaste tu pedido");
-})
-btnComprar5,addEventListener('click', () =>{
-    console.log("Seleccionaste tu pedido");
-})
-btnComprar6,addEventListener('click', () =>{
-    console.log("Seleccionaste tu pedido");
-})
-btnComprar7,addEventListener('click', () =>{
-    console.log("Seleccionaste tu pedido");
-})
-btnComprar8,addEventListener('click', () =>{    
-    console.log("Seleccionaste tu pedido");
-})
-btnComprar9,addEventListener('click', () =>{
-    console.log("Seleccionaste tu pedido");
-})
-btnComprar10,addEventListener('click', () =>{
-    console.log("Seleccionaste tu pedido");
-})
 
-    platos.forEach(plato => {
+    plato.forEach(plato => {
     contenedorPlatos,appendChild(platos)
 
 const cardMenu = document.createElement("div")
@@ -373,29 +313,16 @@ const botonComprar= document.getElementById("comprar" + plato.id)
         carrito.push(plato)
     })
 })
-const amarillo= document.getElementById('amari');
-    amarillo.addEventListener('submit',function(e){
-    e.preventDefault();
-
-let nombre= document.getElementById('nombre').value
-    console.log(nombre)
-}) 
-
     amarillo = document.getElementById('amari');
     amarillo.addEventListener('submit', function (e){
     e.preventDefault();
 let apellido= document.getElementById('apellido').value
     console.log(apellido)
 });
-amarillo = document.getElementById('amari');
-amarillo.addEventListener('submit', function (e){
-    e.preventDefault();
-    let email = document.getElementById('email').nodeValue
-    console.log(email)
-})
+
 const doc = document;
 
-function searchFilters(input,selector){
+function searchFiltro(input,selector){
     doc.addEventListener("keyup",(e)=> {
     if(e.target.matches(input)){
     console.log(e.key);
