@@ -5,7 +5,7 @@ const plato = [
         nombre:"La fortaleza",
         img:"./assets/img/brooke.jpg",
         precio: 2000,
-        descripcion:"calorias:150,carbohidratos:60,fibras:30,grasasSaturadas:0,",
+        description:"calorias:150,carbohidratos:60,fibras:30,grasasSaturadas:0,",
         categoria: "break",
         },
     {
@@ -13,7 +13,7 @@ const plato = [
         nombre:"Especial",
         img:"./assets/img/Especial.jpg",
         precio: 2300,
-        descripcion:" calorias:150,carbohidratos:30,fibras:40,grasasSaturadas:0,",
+        description:" calorias:150,carbohidratos:30,fibras:40,grasasSaturadas:0,",
         categoria:"entrada",
         },
     {
@@ -21,7 +21,7 @@ const plato = [
         nombre:"Rubi",
         img:"./assets/img/Rubi.jpg",
         precio:2500,
-        descripcion:"calorias:110,carbohidratos:40,fibras:20,grasasSaturadas:0,",
+        description:"calorias:110,carbohidratos:40,fibras:20,grasasSaturadas:0,",
         categoria:"plato principal",
         },
     {
@@ -29,7 +29,7 @@ const plato = [
         nombre:"Hamburguesa",
         img:"./assets/img/Hamburguesa.jpg",
         precio:2500,
-        descripcion:"calorias:130,carbohidratos:30,fibras:20,grasasSaturadas:0,",
+        description:"calorias:130,carbohidratos:30,fibras:20,grasasSaturadas:0,",
         categoria:"entrada",
         },
     {
@@ -37,7 +37,7 @@ const plato = [
         nombre:"Jugo de zanahoria",
         img:"./assets/img/jugo de zanahoria.jpg",
         precio:1200,
-        descripcion:"calorias:130,carbohidratos:70,fibras:40,grasasSaturadas:0,",
+        description:"calorias:130,carbohidratos:70,fibras:40,grasasSaturadas:0,",
         categoria:"jugo",
         },
     {
@@ -45,7 +45,7 @@ const plato = [
         nombre:"Ensalada de palta queso tomate y cebolla",
         img:"./assets/img/varios.jpg", 
         precio:1800,
-        descripcion:"calorias:120,carbohidratos:30,fibras:20,grasasSaturadas:0,",
+        description:"calorias:120,carbohidratos:30,fibras:20,grasasSaturadas:0,",
         categoria:"Plato principal",
         },
     {
@@ -53,7 +53,7 @@ const plato = [
         nombre:"Pastel de brocoli con queso",
         img:"./assets/img/especialidad2.jpg",
         precio:1700,
-        descripcion:"calorias:100,carbohidratos:40,fibras:10,grasasSaturadas:0,",
+        description:"calorias:100,carbohidratos:40,fibras:10,grasasSaturadas:0,",
         categoria:"entrada",
         },
     {
@@ -61,7 +61,7 @@ const plato = [
         nombre:"Pollo salteado con brocoli y soja",
         img:"./assets/img/especialidad3.jpg",
         precio:1600,
-        descripcion:" calorias:80,carbohidratos:40,fibras:20,grasasSaturadas:0,",
+        description:" calorias:80,carbohidratos:40,fibras:20,grasasSaturadas:0,",
         categoria:"plato principal",
         },
     {
@@ -69,7 +69,7 @@ const plato = [
         nombre:"Salmon con arroz cebolla y pepino",
         img:"./assets/img/especialidad5.jpg",
         precio:1700,
-        descripcion:"calorias:150,carbohidratos:50,fibras:15,grasasSaturadas:0,",
+        description:"calorias:150,carbohidratos:50,fibras:15,grasasSaturadas:0,",
         categoria:"plato principal",
         },
     {
@@ -77,19 +77,20 @@ const plato = [
         nombre:"Frutas",
         img:"./assets/img/especialidad6.jpg",
         precio:1800,
-        descripcion:"calorias:50,carbohidratos:20,fibras:10,grasasSaturadas:0,",
+        description:"calorias:50,carbohidratos:20,fibras:10,grasasSaturadas:0,",
         categoria:"postre",
         },
     ]
 const carrito = []
 const contenedorPlatos = document.querySelector('#contenedorPlatos');
+
 const mostrarPlatos=() => {
     plato.forEach(plato =>{
     const cardPlato = document.createElement('div');
     cardPlato.setAttribute('id', 'cardPlato');
     cardPlato.innerHTML=`
         <img src="${plato.img}">
-        <div class ="plato-description">
+        <div class ="plato-description"></div>
         <h5>${plato.nombre}</h5>
         <h5>${plato.categoria}</h5>
         <button id='${plato.id}' class="btn-compra">COMPRAR</button>
@@ -97,7 +98,6 @@ const mostrarPlatos=() => {
         `;
     contenedorPlatos.appendChild(cardPlato);
 })
-
 const btnComprar = document.querySelectorAll('.btn-compra');
     btnComprar.forEach(el=> {
     el.addEventListener('click',(e)=> {
@@ -111,8 +111,9 @@ function agregarAlCarrito(id){
     console.log(id);
 let platoEncontrado = plato.find(plato=>plato.id == id);
 
-carrito.push(platoEncontrado)
-console.log(carrito)
+carrito.plato.push({id,precio,cantidad:1})
+carrito.total+=precio,
+actualizarCarrito();
 }
 const existe = carrito.some(plato => plato.id == id);
 
@@ -125,7 +126,7 @@ let platoEncontrado = plato.find(plato => plato.id == id);
     carrito.push(platoEncontrado);
     }
 
-carrito.map(platos => platos.id === parseInt(id));
+carrito.map(platos => platos.id == id);
 plato= document.getElementById('plato')
 
 const listado = plato.reduce((acc, el)=>acc +=`${el.id}-${el.nombre}-precio:$${el.precio}\n`,"0");
@@ -159,8 +160,6 @@ function filtrarPorPrecio(filtro){
 const menu = menu.filter((el) =>el.precio <filtro)
 return menu;
 };
-//let ingreso= prompt("ingrese un precio");
-//let param = prompt("ingresa criterio");
 const menorPrecio=filtrarPorPrecio
 (ingreso)
 console.log(menorPrecio);
