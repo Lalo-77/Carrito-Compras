@@ -87,12 +87,13 @@ const contenedorPlatos = document.querySelector('#contenedorPlatos');
 const mostrarPlatos=() => {
     plato.forEach(plato =>{
     const cardPlato = document.createElement('div');
-    cardPlato.setAttribute('id', 'cardPlato');
+    cardPlato.setAttribute('id','cardPlato');
     cardPlato.innerHTML=`
         <img src="${plato.img}">
         <div class ="plato-description"></div>
         <h5>${plato.nombre}</h5>
-        <h5>${plato.categoria}</h5>
+        <h6>${plato.categoria}</h6>
+        <p class="precio">${plato.precio}</p>
         <button id='${plato.id}' class="btn-compra">COMPRAR</button>
         </div>
         `;
@@ -109,33 +110,35 @@ mostrarPlatos()
 
 function agregarAlCarrito(id){
     console.log(id);
-let platoEncontrado = plato.find(plato=>plato.id == id);
+    let platoEncontrado = plato.find(plato=>plato.id == id);
 
-carrito.plato.push({id,precio,cantidad:1})
-carrito.total+=precio,
-actualizarCarrito();
-}
-const existe = carrito.some(plato => plato.id == id);
+    carrito.push({id,precio,cantidad:1})
+    carrito.total += precio;
+    actualizarCarrito();
 
-if (existe) {
-    platoEnCarrito.cantidad++
+    const existe = carrito.some(plato => plato.id == id);
 
-}else{
+    if (existe) {
+        platoEnCarrito.cantidad++
 
-let platoEncontrado = plato.find(plato => plato.id == id);
-    carrito.push(platoEncontrado);
+    }else{
+
+        platoEncontrado = plato.find(plato => plato.id == id);
+        carrito.push(platoEncontrado);
     }
 
-carrito.map(platos => platos.id == id);
-plato= document.getElementById('plato')
-
+    carrito.map(platos => platos.id == id);
+    plato= document.getElementById('plato')
+}
 const listado = plato.reduce((acc, el)=>acc +=`${el.id}-${el.nombre}-precio:$${el.precio}\n`,"0");
 
-if (seleccion  === 0 || isNaN(seleccion)) {
+    if (seleccion  === 0 || isNaN(seleccion)) {
     calcularTotal();
 }
-const buscarPlato = plato.find(plato => plato.id === seleccion);
-
+const buscarPlato = plato.find(platos => plato.id === seleccion);
+const encontrado=arr.find((el) =>{
+    return el.plato.includes(filtro);
+})
     console.log(buscarPlato);
 
     carrito.push(buscarPlato);
@@ -143,12 +146,11 @@ const buscarPlato = plato.find(plato => plato.id === seleccion);
     console.log(carrito);
 
 const menu = plato
-if(continuarCompra){
+    if(continuarCompra){
     mostrarPlatos();
-}else{
+    }else{
     calcularTotal();
     }
-
 function calcularTotal(){
 
 const total = carrito.reduce 
@@ -166,14 +168,14 @@ console.log(menorPrecio);
 
 function filtrar(plato, filter, param){
     plato.filter(el =>{
-if (param === "id"){
+    if (param === "id"){
 
-return el.id == filter
-}else if(param ==='precio'){
+        return el.id == filter
+    }else if(param ==='precio'){
     
     return el.precio <= filter
-}else{
-    return el[param].includes(filter)
+    }else{
+        return el[param].includes(filter)
         }
     })
 }
@@ -192,7 +194,7 @@ const filtrarPorNombre1 = new Array
 function saludo (nombre, apellido){
         console.log("Hola" + "Te damos la Bienvenida");
     }
-let todoslosPlatos = plato.map((plato) => plato.nombre + "" + 
+let todoslosPlatos = platos.map((plato) => plato.nombre + "" + 
 plato.precio + "$");
 alert(todoslosPlatos.join(" - ")) 
 
@@ -208,68 +210,68 @@ if (!img){
     this.img=img;
     }
 }
-const card1= new plato (
+const card1= new platos(
 "id:1",
 "la fortaleza",
 "img: ./assets/img/brooke.jpg",
 "precio: 2000",
 "descripcion:calorias:150,carbohidratos:60,fibras:30,grasasSaturadas:0,",
 "categoria: plato principal");
-const card2 = new plato(
+const card2 = new platos(
 "id:2",
 "nombre:Especial",
 "img:./assets/img/Especial.jpg",
 "precio: 2300","descripcion:calorias:150,carbohidratos:30,fibras:40,grasasSaturadas:0,",
 "categoria: entrada");
-const card3 = new plato(
+const card3 = new platos(
 "id:3",
 "nombre:Rubi",
 "img:./assets/img/Rubi.jpg",
 "precio:2500",
 "descripcion: calorias:110,carbohidratos:40,fibras:20,grasasSaturadas:0,",
 "categoria: plato principal");
-const card4 = new plato(
+const card4 = new platos(
 "id:4",
 "nombre:Hamburguesa",
 "img:./assets/img/Hamburguesa.jpg",
 "precio:2500",
 "descripcion: calorias: 130 carbohidratos: 30, grasasSaturadas: 0 ,","categoria: entrada")
-const card5 = new plato( 
+const card5 = new platos( 
 "id:5",
 "nombre:Jugo de zanahoria",
 "img:./assets/img/jugo de zanahoria.jpg",
 "precio:1200",
 "descripcion:calorias:130,carbohidratos:70,fibras:40,grasasSaturadas:0,",
 "categoria:postre");
-const card6 = new plato(
+const card6 = new platos(
 "id:6",
 "nombre:Ensalada de palta queso tomate y cebolla",
 "img:./assets/img/varios.jpg", 
 "precio:1800",
 "descripcion: calorias:120,carbohidratos:30,fibras:20,grasasSaturadas:0,",
 "categoria:Plato princioal");
-const card7 = new plato(
+const card7 = new platos(
 "id:7",
 "nombre:Pastel de brocoli con queso",
 "img:./assets/img/especialidad2.jpg",
 "precio:1700",
 "descripcion:calorias:100,carbohidratos:40,fibras:10,grasasSaturadas:0,",
 "categoria:entrada",)
-const card8 = new plato(
+const card8 = new platos(
 "id:8",
 "nombre:Pollo salteado con brocoli y soja",
 "img:./assets/img/especialidad3.jpg",
 "precio:1600",
 "descripcion:calorias:80,carbohidratos:40,fibras:20,grasasSaturadas:0,",
 "categoria:plato principal");
-const card9 = new plato (
+const card9 = new platos(
 "id:9",
 "nombre:Salmon con arroz cebolla y pepino",
 "img:./assets/img/especialidad5.jpg",
 "precio:1700",
 "descripcion:calorias:150,carbohidratos:50,fibras:15,grasasSaturadas:0,",
 "categoria:plato principal")
-const card10 = plato(
+const card10 = platos(
 "id:10",
 "nombre:Frutas",
 "img:./assets/img/especialidad6.jpg",
@@ -280,25 +282,25 @@ const card10 = plato(
 console.log(menu)
 
 function actualizarCarrito(e){
-    plato=e.target;
-const id=plato.getAtribute('data-id');
-    parceFloat(plato.getAtribute('data-precio'));
+    platos=e.target;
+const id=platos.getAtribute('data-id');
+    parceFloat(platos.getAtribute('data-precio'));
 
 const platoEnCarrito= carrito.plato.find(p.id===id);
-if (platoEnCarrito){
-    platoEnCarrito.cantidad++;
-}else {
+    if (platoEnCarrito){
+        platoEnCarrito.cantidad++;
+    }else {
         carrito.plato.push({id,precio,cantidad:1});
     }
-carrito,total+=precio;
+    carrito,total+=precio;
 }
-plato.forEach(plato=>{
+    platos.forEach(plato=>{
 })
 btnComprar1.addEventListener('click', ()=>{
     console.log("Seleccionaste tu pedido");
 })
 
-    plato.forEach(plato => {
+    platos.forEach(plato => {
     contenedorPlatos,appendChild(platos)
 
 const cardMenu = document.createElement("div")
@@ -334,3 +336,11 @@ function searchFiltro(input,selector){
 }
 });
 }
+
+inputBusc =document.querySelector("#btnBuscar");
+btn-buscar.addEventListener("click",() => {
+const encontrado=buscarPlato(platos,inputBusc.value)
+
+console.log(encontrado);
+
+});

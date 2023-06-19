@@ -21,6 +21,7 @@
             <div class="columnas u-pull-right"> </div>
                 <ul class="navBar">
                     <li class="submenu">
+                    <li><a href="./bienvenido.html">bienvenido</a></li>
                     </li>
                 </ul>
             </div>
@@ -34,6 +35,11 @@
     <button class="saludo" onclick='saludo("nombre",+ " " + "apellido")'> HOLA TE DAMOS LA BIENVENIDA </button>
         <section class="menu">
             <h2>NUESTRO MENU</h2> 
+          
+            <input id="busc">
+                <label id="buscar"></label>
+                <button type="submit"id="btn-buscar">BUSCAR</button>
+            </input>
         </section>
         <section>
             <div id="contenedorPlatos">
@@ -90,29 +96,31 @@
                                             <form id="amarillo" method="post">
                                                 <fieldset class="escribir">
                                                     <legend class="informac">Ingresa tus datos personales</legend>
-                                                        <label class="nombre">
-                                                            <span>nombre</span>
-                                                            <input class="text" id="nombre" placeholder="ingresa tu nombre">
+                                                        <label class="usuario">
+                                                            <span>Usuario</span>
+                                                            <input class="text" id="usuario" placeholder="ingresa tu usuario">
                                                         </label>
                                                         <label class="apellido">
-                                                            <span>apellido</span>
+                                                            <span>Apellido</span>
                                                             <input type="text" id="apellido"
                                                                 placeholder="ingresa tu apellido">
                                                         </label>
                                                         <label class="email">
-                                                            <span>email:</span>
-                                                            <input type="text" id="e-mail"
-                                                            placeholder="ingresa tu mail"
+                                                            <span>Email:</span>
+                                                            <input type="text" id="email" placeholder="ingresa tu mail"
                                                                 required>
                                                         </label>
+                                                        <label>
+                                                            <span>Contraseña</span>
+                                                            <input type="password" id="clave" placeholder="Ingresa tu Contraseña"
+                                                            required >
+                                                            <br>
+                                                        </label>
+                                                        <label>
+                                                            <button type="submit"name="btn-2a" class="btn-dos" onclick="loguear()">INGRESAR</button>
+                                                            <button type="reset" name="btn-borrar" class="btn-2lim">LIMPIAR</button>
+                                                        </label>
                                                 <fieldset>
-                                                <fieldset>
-                                                    <legend></legend>
-                                                    <label for="si seguro"></label>
-                                                    <button type="submit"name="btn-2a" class="btn-dos">ENVIAR</button>
-                                                    <button type="reset" name="btn-borrar" class="btn-2lim">LIMPIAR</button>
-                                                    <a ref="index.html"></a>
-                                                </fieldset>
                                             </form>
                                     </div>
                             </fieldset>
