@@ -29,18 +29,17 @@
     <header>
     </header>
     <main class="igual">
-    <section class="titulo">
+        <section class="titulo">
             <h1>RESTAURANT LA FORTALEZA</h1>
-    </section>
-    <button class="saludo" onclick='saludo("nombre",+ " " + "apellido")'> HOLA TE DAMOS LA BIENVENIDA </button>
-        <section class="menu">
-            <h2>NUESTRO MENU</h2> 
-          
-            <input id="busc">
-                <label id="buscar"></label>
-                <button type="submit"id="btn-buscar">BUSCAR</button>
-            </input>
         </section>
+            <button class="saludo" onclick='saludo("nombre",+ " " + "apellido")'> HOLA TE DAMOS LA BIENVENIDA </button>
+                <section class="menu">
+                    <h2>NUESTRO MENU</h2> 
+                    <input id="busc">
+                    <label id="buscar"></label>
+                    <button type="submit"id="btn-buscar">BUSCAR</button>
+                    </input>
+                </section>
         <section>
             <div id="contenedorPlatos">
         </section>
@@ -92,49 +91,34 @@
                                 <div class="cja2">
                                     <div class="ing">
                                         <h2 id="cuenta">Ingresa a tu cuenta</h2>
-                                        </div>
-                                            <form id="amarillo" method="post">
-                                                <fieldset class="escribir">
-                                                    <legend class="informac">Ingresa tus datos personales</legend>
-                                                        <label class="usuario">
-                                                            <span>Usuario</span>
-                                                            <input class="text" id="usuario" placeholder="ingresa tu usuario">
-                                                        </label>
-                                                        <label class="apellido">
-                                                            <span>Apellido</span>
-                                                            <input type="text" id="apellido"
-                                                                placeholder="ingresa tu apellido">
-                                                        </label>
-                                                        <label class="email">
-                                                            <span>Email:</span>
-                                                            <input type="text" id="email" placeholder="ingresa tu mail"
-                                                                required>
-                                                        </label>
-                                                        <label>
-                                                            <span>Contraseña</span>
-                                                            <input type="password" id="clave" placeholder="Ingresa tu Contraseña"
-                                                            required >
-                                                            <br>
-                                                        </label>
-                                                        <label>
-                                                            <button type="submit"name="btn-2a" class="btn-dos" onclick="loguear()">INGRESAR</button>
-                                                            <button type="reset" name="btn-borrar" class="btn-2lim">LIMPIAR</button>
-                                                        </label>
-                                                <fieldset>
-                                            </form>
                                     </div>
+                                        <form id="form-login">
+                                            <legend class="informac">Ingresa tus datos personales</legend>
+                                            <span>Usuario</span>
+                                            <input type="text" placeholder="Ingresa tu Usuario" id="user">
+                                            <input type="password" placeholder="Password" id="pass">
+                                            <div class="check"></div>
+                                            <label for="check">Recordar</label>
+                                            <input type="checkbox" id="check" />
+                                            <p id="message"></p>
+                                            <button type="submit"name="btn-2a" class="btn-dos" onclick="loguear()">INGRESAR</button>
+                                            <button type="reset" name="btn-borrar" class="btn-2lim">LIMPIAR</button>
+                                            </div>
+                                            <input type="submit"class="btn btn-login" value="Ingresar"id="login"/> 
+                                        </form> 
                             </fieldset>
                         </form>
                     </div>
-                    <div class="tres">
-                            <label id="trz">
-                                <h3>Carrito</h3>
-                                <ul></ul>
-                                <p>total:$<span id="total">0</span></span></p>
-                                <button type="submit"name="btn-carrit" class="btn-tres">ENVIAR</button>
-                                <button type="reset" name="btn-borrar" class="btn-3lim">LIMPIAR</button>
-                            </label>
-                    </div>
+                </div>
+                <div class="tres">
+                    <label id="trz">
+                        <h3>Carrito</h3>
+                        <ul></ul>
+                        <p>total:$<span id="total">0</span></span></p>
+                        <button type="submit"name="btn-carrit" class="btn-tres">ENVIAR</button>
+                        <button type="reset" name="btn-borrar" class="btn-3lim">LIMPIAR</button>
+                    </label>
+                </div>
             </section>
     </main>
     <footer class="pie">

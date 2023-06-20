@@ -130,13 +130,14 @@ function agregarAlCarrito(id){
     carrito.map(platos => platos.id == id);
     plato= document.getElementById('plato')
 }
-const listado = plato.reduce((acc, el)=>acc +=`${el.id}-${el.nombre}-precio:$${el.precio}\n`,"0");
+/*const listado = plato.reduce((acc, el)=>acc +=`${el.id}-${el.nombre}-precio:$${el.precio}\n`,"0");
 
     if (seleccion  === 0 || isNaN(seleccion)) {
     calcularTotal();
-}
+}*/
 const buscarPlato = plato.find(platos => plato.id === seleccion);
-const encontrado=arr.find((el) =>{
+
+const encontrado= plato.find((el) =>{
     return el.plato.includes(filtro);
 })
     console.log(buscarPlato);
@@ -151,13 +152,16 @@ const menu = plato
     }else{
     calcularTotal();
     }
-function calcularTotal(){
+
+ 
+/*function calcularTotal(){
 
 const total = carrito.reduce 
 console.log(carrito);
 ((acc,el)=> acc + el.precio, 0);
 
-}
+}*/
+
 function filtrarPorPrecio(filtro){
 const menu = menu.filter((el) =>el.precio <filtro)
 return menu;
@@ -300,7 +304,7 @@ btnComprar1.addEventListener('click', ()=>{
     console.log("Seleccionaste tu pedido");
 })
 
-    platos.forEach(plato => {
+    plato.forEach(plato => {
     contenedorPlatos,appendChild(platos)
 
 const cardMenu = document.createElement("div")
@@ -343,4 +347,40 @@ const encontrado=buscarPlato(platos,inputBusc.value)
 
 console.log(encontrado);
 
+});
+const inputUser = document.querySelector("#user"),
+inputPass = document.querySelector("#pass"),
+check = document.querySelector("#check"),
+formulario =document.querySelector("#form-login"),
+message =document.querySelector("#message");
+
+function guardar(valor) {
+    const user= {usuario: inputUser.value, pass:inputPass.value};
+    //validar si los campos estan vacios
+if(valor === "sessionStorage"){
+    sessionStorage.setItem("user",JSON.stringify(user));
+} 
+if(valor === "localStorage"){
+     localStorage.setItem("user",JSON.stringify(user));
+}
+return user;
+
+}
+
+function recuperarDatos(datos) {
+if(datos){
+    inputUser.value= datos.usuario;
+    inputPass.value= datos.pass;
+   }
+}
+
+recuperarDatos(JSON.parse(localStorage.getItem('user')))
+
+formulario.addEventListener("submit", (e) =>{
+    e.preventDefault();
+if(check.checked){
+    guardar("localStorage");
+}else{
+guardar("sessionStorage");
+}
 });
