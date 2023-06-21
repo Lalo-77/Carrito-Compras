@@ -35,9 +35,9 @@
             <button class="saludo" onclick='saludo("nombre",+ " " + "apellido")'> HOLA TE DAMOS LA BIENVENIDA </button>
                 <section class="menu">
                     <h2>NUESTRO MENU</h2> 
-                    <input id="busc">
-                    <label id="buscar"></label>
-                    <button type="submit"id="btn-buscar">BUSCAR</button>
+                    <label for="Ingreso" id="bsc">Ingrese el plato a buscar</label>
+                    <input id="text" name="ingreso" id="ingreso" >
+                    <button type="submit"id="btnBuscar">BUSCAR</button>
                     </input>
                 </section>
         <section>
@@ -95,7 +95,7 @@
                                         <form id="form-login">
                                             <legend class="informac">Ingresa tus datos personales</legend>
                                             <input type="text" placeholder="Ingresa tu Usuario" id="user"><br>
-                                             <input type="password" placeholder="Password" id="pass"><br>
+                                            <input type="password" placeholder="Password" id="pass"><br>
                                             <div class="check"></div>
                                             <label for="check">Recordar</label>
                                             <input type="checkbox" id="check" />
