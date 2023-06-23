@@ -82,7 +82,7 @@ const plato = [
 ];
 const carrito = [];
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
-
+const contenedorCarrito=document.querySelector("contenedorCarrito");
 const mostrarPlatos = () => {
   plato.forEach((plato) => {
     const cardPlato = document.createElement("div");
@@ -129,13 +129,16 @@ console.log(total);
         nombre:platoEncontrado.nombre,
         precio:platoEncontrado.precio,
         cantidad: 1,
+        categoria:platoEncontrado.categoria,
+        img:platoEncontrado.img,
   }))
 }
 localStorage.setItem("carrito", JSON.stringify(carrito));
+renderizarCarrito ()
 }
 
 function renderizarCarrito(){
-  carrito.forEach( el => {
+  carrito.forEach( plato => {
     const cardPlato = document.createElement("div");
     cardPlato.setAttribute("id", "cardPlato");
     cardPlato.innerHTML = `
@@ -144,12 +147,16 @@ function renderizarCarrito(){
         <h5>${plato.nombre}</h5>
         <h6>${plato.categoria}</h6>
         <p class="precio">${plato.precio}</p>
-        <button id='${plato.id}' class="btn-compra">COMPRAR</button>
+        <button id='${plato.id}' class="btn-compra">ELIMINAR</button>
         </div>
         `;
     contenedorCarrito.appendChild(cardPlato);
   })
 }
+renderizarCarrito ()
+
+const compraTotal =("renderizarCarrito");
+console.log(renderizarCarrito);
 
 const buscar = document.querySelector('#busc')
       buscar.addEventListener('click', () => {
@@ -186,4 +193,3 @@ console.log(inputU[7]);
 const inputP= document.getElementsByTagName('input');
 inputP[8].value= "7732"
 console.log(inputU[8]);
-
