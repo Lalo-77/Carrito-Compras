@@ -47,9 +47,6 @@
                 <div class="uuno">
                     <div class="carrito">
                         <h3>Carrito de Compras </h3>
-                        <div id="contenedorCarrito">
-                            carrito
-                        </div>
                     </div>
                     <legend class="datper"></legend>
                     <div class="cuentas">
@@ -80,7 +77,7 @@
                                     <label for="santa_fe" class="santa_fe">tarjeta Santa Fe
                                     <input type="radio" id="tarjSf" name="opinion" value="con tarjerta">
                                     </label>
-                                    <button type="submit" name="btn" class="btn-enviar">ENVIAR</button>
+                                    <button type="submit" name="btn" id="btnEnviar">ENVIAR</button>
                                     <button type="reset" name="btn-limpiar" class="btn-limpiar">LIMPIAR</button>
                                 </fieldset>
                                 </form>
@@ -103,7 +100,7 @@
                                             <label for="check">Recordar</label>
                                             <input type="checkbox" id="check" />
                                             <p id="message"></p>
-                                            <button type="submit"class="btn btn-login" id="login" value="Ingresar" onclick="loguear()">INGRESAR</button>
+                                            <button type="submit" id="Login" value="Ingresar" onclick="loguear()">INGRESAR</button>
                                             <button type="reset" name="btn-borrar" class="btn-2lim">LIMPIAR</button>
                                             </div>
                                         </form> 
@@ -116,9 +113,10 @@
                         <h3>Carrito</h3>
                         <ul></ul>
                         <p>total:$<span id="total">0</span></span></p>
-                        <button type="submit"name="btn-carrit" class="btn-tres">ENVIAR</button>
+                        <button type="submit"name="btn-carrit" class="btnTres">ENVIAR</button>
                         <button type="reset" name="btn-borrar" class="btn-3lim">LIMPIAR</button>
                     </label>
+                    <div id="contenedorCarrito"></div>
                 </div>
             </section>
     </main>

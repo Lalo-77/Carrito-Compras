@@ -377,7 +377,7 @@ border-radius: 50px;
 .click{
     margin-left: 30px;
 }
-.btn-enviar{
+#btnEnviar{
     color:black;
     background-color:greenyellow;
     width: 100px;
@@ -393,7 +393,7 @@ border-radius: 50px;
     margin: 10px;
     border-radius: 10px;
 }
-#login{
+#Login{
     color:black;
     background-color: greenyellow;
     width: 100px;
@@ -439,7 +439,7 @@ border-radius: 50px;
     font-size: 50px;
     font-family: 'Roboto', sans-serif;
 }
-.btn-tres{
+.btnTres{
     background-color:greenyellow;
     width: 100px;
     height: 40px;
@@ -497,3 +497,24 @@ border-radius: 50px;
 #datos{
     margin-left: 800px;
 }
+#contenedorCarrito{
+    background-color:burlywood;
+    color:black;
+    text-align: center;
+    width:500px;
+    height: 500px;
+    font-size: 30px;
+    font-weight: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+#renderizarCarito{
+    background-color:cornflowerblue;
+    color:black;
+    text-align: center;
+    width:500px;
+    height: 500px;
+    font-size: 30px;
+    font-weight: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+

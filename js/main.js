@@ -82,7 +82,7 @@ const plato = [
 ];
 const carrito = [];
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
-const contenedorCarrito=document.querySelector("contenedorCarrito");
+const contenedorCarrito=document.querySelector("#contenedorCarrito");
 const mostrarPlatos = () => {
   plato.forEach((plato) => {
     const cardPlato = document.createElement("div");
@@ -153,13 +153,12 @@ function renderizarCarrito(){
     contenedorCarrito.appendChild(cardPlato);
   })
 }
-renderizarCarrito ()
 
 const compraTotal =("renderizarCarrito");
 console.log(renderizarCarrito);
 
-const buscar = document.querySelector('#busc')
-      buscar.addEventListener('click', () => {
+const buscar = document.querySelector("#busc")
+      buscar.addEventListener("click", () => {
       console.log("buscar");
 })
 const inputUser = document.querySelector("#user"),
@@ -186,10 +185,18 @@ function recuperarDatos(datos) {
 }
 recuperarDatos(JSON.parse(localStorage.getItem("user")));
 
-const inputU= document.getElementsByTagName('input');
+const inputU= document.getElementsByTagName("input");
 inputU[7].value= "Cristian"
 console.log(inputU[7]);
 
-const inputP= document.getElementsByTagName('input');
+const inputP= document.getElementsByTagName("input");
 inputP[8].value= "7732"
 console.log(inputU[8]);
+
+const btnEnviar=document.addEventListener(("click"), () =>{
+  console.log("Enviaste tu pedido");
+})
+const Login=document.addEventListener(("click"), () =>{
+  Login=document.querySelector('#Login');
+  console.log("Ingresaste a tu cuenta");
+})
