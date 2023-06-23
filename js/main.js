@@ -82,6 +82,7 @@ const plato = [
 ];
 const carrito = [];
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
+
 const mostrarPlatos = () => {
   plato.forEach((plato) => {
     const cardPlato = document.createElement("div");
@@ -98,9 +99,9 @@ const mostrarPlatos = () => {
     contenedorPlatos.appendChild(cardPlato);
   });
   const btnComprar = document.querySelectorAll(".btn-compra");
-  btnComprar.forEach((el) => {
-    el.addEventListener("click", (e) => {
-      agregarAlCarrito(e.target.id);
+        btnComprar.forEach((el) => {
+        el.addEventListener("click", (e) => {
+        agregarAlCarrito(e.target.id);
     });
   });
 };
@@ -108,183 +109,52 @@ mostrarPlatos();
 
 function agregarAlCarrito(id) {
   console.log(id);
-  let platoEncontrado = plato.find((plato) => plato.id == id);
+  console.log(carrito);
 
-  carrito.push({ id, precio, cantidad: 1 });
-  carrito.total += precio;
-  actualizarCarrito();
+const total =carrito.reduce( (acc, el) => acc += el.precio,0)
+console.log(total);
 
-  const existe = carrito.some((plato) => plato.id == id);
+  const existe = carrito.some((plato) => plato.id === parseInt (id));
+       console.log(existe);
 
   if (existe) {
-    platoEnCarrito.cantidad++;
+    const indice = carrito.findIndex( p => p.id === parseInt(id));
+    carrito[indice].cantidad++;
   } else {
-    platoEncontrado = plato.find((plato) => plato.id == id);
-    carrito.push(platoEncontrado);
-  }
+    let platoEncontrado = plato.find(p => p.id ==parseInt(id));
+        console.log(platoEncontrado);
 
-  carrito.map((platos) => platos.id == id);
-  let plato = document.getElementById("plato");
+    carrito.push(({ 
+        id:platoEncontrado.id,
+        nombre:platoEncontrado.nombre,
+        precio:platoEncontrado.precio,
+        cantidad: 1,
+  }))
 }
-const listado = plato.reduce(
-  (acc, el) => (acc += `${el.id}-${el.nombre}-precio:$${el.precio}\n`),"0");
-
-if (seleccion === 0 || isNaN(seleccion)) {
-  calcularTotal();
+localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-const buscarPlato = plato.find((plato) => plato.id === Number);
 
-const encontrado = plato.find((el) => {
-  return el.nombre.includes(buscarPlato);
-});
-//console.log(buscarPlato);
-
-carrito.push(buscarPlato);
-
-//console.log(carrito);
-
-let continuarCompra = "carrito";
-
-const menu = plato;
-if (continuarCompra) {
-  mostrarPlatos();
-} else {
-  calcularTotal();
+function renderizarCarrito(){
+  carrito.forEach( el => {
+    const cardPlato = document.createElement("div");
+    cardPlato.setAttribute("id", "cardPlato");
+    cardPlato.innerHTML = `
+        <img src="${plato.img}">
+        <div class ="plato-description"></div>
+        <h5>${plato.nombre}</h5>
+        <h6>${plato.categoria}</h6>
+        <p class="precio">${plato.precio}</p>
+        <button id='${plato.id}' class="btn-compra">COMPRAR</button>
+        </div>
+        `;
+    contenedorCarrito.appendChild(cardPlato);
+  })
 }
-function calcularTotal() {
-  const total = carrito.reduce((acc, el) => (acc += el.precio), 0);
-  console.log(carrito);
-}
-function filtrarPorPrecio(filtro) {
-  const menu = menu.filter((el) => el.precio < filtro);
-  return menu;
-}
-/*const menorPrecio=filtrarPorPrecio
-(ingreso)
-console.log(menorPrecio);*/
 
-function filtrar(plato, filter, param) {
-  plato.filter((el) => {
-    if (param === "id") {
-      return el.id == filter;
-    } else if (param === "precio") {
-      return el.precio <= filter;
-    } else {
-      return el[param].includes(filter);
-    }
-  });
-}
-const filtroPorCategoria = plato.filter(
-  (alimento) => alimento.categoria === "plato principal"
-);
-
-const filtrarPorNutricion = plato.filter((alimento) => alimento === "natural");
-
-console.log(filtrarPorNutricion);
-
-const filtrarPorNombre1 = new Array([
-  "la Fortaleza",
-  "2000",
-  "Especial",
-  "1900",
-  "Rubi",
-  "2500",
-  "Hamburguesa",
-  "2500",
-  "jugo de zanahoria",
-  "1200",
-  "Ensalada palta queso tomate y cebolla",
-  "1800",
-  "pastel de brocoli con queso",
-  "1500",
-  "Pollo salteado con brocoli y soja",
-  "1800",
-  "Salmon con arroz cebolla y pepino",
-  "2000",
-  "Frutas",
-  "1200",
-]);
-
-function saludo(nombre, apellido) {
-  console.log("Hola" + "Te damos la Bienvenida");
-}
-let todoslosPlatos = plato.map(
-  (plato) => plato.nombre + "" + plato.precio + "$"
-);
-alert(todoslosPlatos.join(" - "));
-
-function seleccion(nombre, descripcion, categoria, precio, img) {
-  this.id = menu.length + 1;
-  this.nombre = nombre;
-  this.descripcion = descripcion;
-  this.categoria = categoria;
-  this.precio = parceFloat(precio);
-  if (!img) {
-    this.img = "../assets/img/not-found-image-15383864787lu.jpg";
-  } else {
-    this.img = img;
-  }
-}
-function actualizarCarrito(e) {
-  plato = e.target;
-  const id = platos.getAtribute("data-id");
-  parceFloat(plato.getAtribute("data-precio"));
-
-  const platoEnCarrito = carrito.plato.find(p.id === id);
-  if (platoEnCarrito) {
-    platoEnCarrito.cantidad++;
-  } else {
-    carrito.plato.push({ id, precio, cantidad: 1 });
-  }
-  carrito, (total += precio);
-}
-plato.forEach((plato) => {});
-/*
-
-    plato.forEach(plato => {
-    contenedorPlatos,appendChild(platos)
-
-const cardMenu = document.createElement("div")
-    cardMenu.innerHTML
-    
-        menuContainer.append(cardMenu)
-const botonComprar= document.getElementById("comprar" + plato.id)
-
-    botonComprar.addEventListener("click", () => {
-
-        carrito.push(plato)
-    })
-    amarillo = document.getElementById('amari');
-    amarillo.addEventListener('submit', function (e){
-    e.preventDefault();
-let apellido= document.getElementById('apellido').value
-    console.log(apellido)
-});*/
-
-const doc = document;
-
-function searchFiltro(input, selector) {
-  doc.addEventListener("keyup", (e) => {
-    if (e.target.matches(input)) {
-      console.log(e.key);
-      console.log(e, target.value);
-      doc.querySelectorAll(selector),
-        forEach((el) =>
-          el.textContent.toLowerCase().includes(e.target.value)
-            ? el.classList.remmove("filter")
-            : e.classList.add("filter")
-        );
-    }
-  });
-}
-const btnBuscar = document.querySelector('#btnBuscar')
-
-
-btnBuscar.addEventListener('click', () => {
-
-    console.log("hiciste click");
+const buscar = document.querySelector('#busc')
+      buscar.addEventListener('click', () => {
+      console.log("buscar");
 })
-
 const inputUser = document.querySelector("#user"),
   inputPass = document.querySelector("#pass"),
   check = document.querySelector("#check"),
@@ -293,7 +163,6 @@ const inputUser = document.querySelector("#user"),
 
 function guardar(valor) {
   const user = { usuario: inputUser.value, pass: inputPass.value };
-  //validar si los campos estan vacios
   if (valor === "sessionStorage") {
     sessionStorage.setItem("user", JSON.stringify(user));
   }
@@ -310,11 +179,11 @@ function recuperarDatos(datos) {
 }
 recuperarDatos(JSON.parse(localStorage.getItem("user")));
 
-/*formulario.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (check.checked) {
-    guardar("localStorage");
-  } else {
-    guardar("sessionStorage");
-  }
-});*/
+const inputU= document.getElementsByTagName('input');
+inputU[7].value= "Cristian"
+console.log(inputU[7]);
+
+const inputP= document.getElementsByTagName('input');
+inputP[8].value= "7732"
+console.log(inputU[8]);
+

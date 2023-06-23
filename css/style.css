@@ -108,14 +108,6 @@ h1{
     color:midnightblue;
     background-color: chocolate;
 }
-.saludo{
-    text-align: centers;
-    color: chartreuse;
-    background-color: darkolivegreen;
-    border-radius: 10px;
-width: 300px;
-height: 30px;
-}
 #igual{
 display: grid;
 width: 100%;
@@ -208,7 +200,7 @@ h6{
     background-color: darkorange;
     text-align: center;
     color: white;
-    width: 400px;
+    width: 800px;
     height: 50px;
     border-radius: 50px;
     margin-left: 20px;
@@ -473,20 +465,35 @@ border-radius: 50px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
 }
+#bsc{
+    color:black;
+    font-weight: 30px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    width: 300px;
+    height: 20px;
+    };
+#ingreso{
+    width: 50px;
+    height: 20px;
+}
 #busc{
-    width: 200px;
-    height: 30px;
-    margin-left: 1100px;
-}
-#btn-buscar{
-    width: 100px;
-    height: 30px;
-    margin-left: 1300px;
-}
+    color:black;
+    background-color:greenyellow;
+    width: 63px;
+    height: 28px;
+    border-radius: 20px;
+    font-weight: 20px;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+};
 #user{
     margin-left: 10px;
     margin-bottom: 10px;
 }
 #pass{
     margin-left: 10px;
+}
+#datos{
+    margin-left: 800px;
 }

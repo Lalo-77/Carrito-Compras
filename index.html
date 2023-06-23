@@ -21,7 +21,6 @@
             <div class="columnas u-pull-right"> </div>
                 <ul class="navBar">
                     <li class="submenu">
-                    <li><a href="./bienvenido.html">bienvenido</a></li>
                     </li>
                 </ul>
             </div>
@@ -32,12 +31,13 @@
         <section class="titulo">
             <h1>RESTAURANT LA FORTALEZA</h1>
         </section>
-            <button class="saludo" onclick='saludo("nombre",+ " " + "apellido")'> HOLA TE DAMOS LA BIENVENIDA </button>
                 <section class="menu">
-                    <h2>NUESTRO MENU</h2> 
+                    <h2>NUESTRO MENU: Alimentos Naturales</h2>
+                </section>
+                <section id="datos">
                     <label for="Ingreso" id="bsc">Ingrese el plato a buscar</label>
-                    <input id="text" name="ingreso" id="ingreso" >
-                    <button type="submit"id="btnBuscar">BUSCAR</button>
+                    <input name="ingreso" id="ingreso"  placeholder="Ingrese el plato">
+                    <button type="submit"id="busc" name="buscar">BUSCAR</button>
                     </input>
                 </section>
         <section>
@@ -47,6 +47,9 @@
                 <div class="uuno">
                     <div class="carrito">
                         <h3>Carrito de Compras </h3>
+                        <div id="contenedorCarrito">
+                            carrito
+                        </div>
                     </div>
                     <legend class="datper"></legend>
                     <div class="cuentas">
@@ -75,7 +78,7 @@
                                     <input type="radio" id="con tarjeta" name="opinion" value="con tarjeta">
                                     </label>
                                     <label for="santa_fe" class="santa_fe">tarjeta Santa Fe
-                                    <input type="radio" id="con tarjeta" name="opinion" value="con tarjerta">
+                                    <input type="radio" id="tarjSf" name="opinion" value="con tarjerta">
                                     </label>
                                     <button type="submit" name="btn" class="btn-enviar">ENVIAR</button>
                                     <button type="reset" name="btn-limpiar" class="btn-limpiar">LIMPIAR</button>
@@ -95,7 +98,7 @@
                                         <form id="form-login">
                                             <legend class="informac">Ingresa tus datos personales</legend>
                                             <input type="text" placeholder="Ingresa tu Usuario" id="user"><br>
-                                            <input type="password" placeholder="Password" id="pass"><br>
+                                            <input type="text" placeholder="Password" id="pass"><br>
                                             <div class="check"></div>
                                             <label for="check">Recordar</label>
                                             <input type="checkbox" id="check" />
