@@ -193,10 +193,9 @@ const inputP= document.getElementsByTagName("input");
 inputP[8].value= "7732"
 console.log(inputU[8]);
 
-const btnEnviar=document.addEventListener(("click"), () =>{
+const btnPedido=document.addEventListener(("click"), () =>{
   console.log("Enviaste tu pedido");
 })
 const Login=document.addEventListener(("click"), () =>{
-  Login=document.querySelector('#Login');
   console.log("Ingresaste a tu cuenta");
 })
