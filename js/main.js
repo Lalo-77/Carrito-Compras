@@ -153,13 +153,13 @@ function renderizarCarrito(){
     contenedorCarrito.appendChild(cardPlato);
   })
 }
-
+const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
 console.log(renderizarCarrito);
 
-const buscar = document.querySelector("#busc")
-      buscar.addEventListener("click", () => {
-      console.log("buscar");
+const btnBusc = document.querySelector("#busc")
+      busc.addEventListener("click", () => {
+      console.log("busc");
 })
 const inputUser = document.querySelector("#user"),
   inputPass = document.querySelector("#pass"),
@@ -194,8 +194,59 @@ inputP[8].value= "7732"
 console.log(inputU[8]);
 
 const btnPedido=document.addEventListener(("click"), () =>{
-  console.log("Enviaste tu pedido");
+   document.getElementById("btnPedido");
+   console.log("Enviaste tu pedido");
+ })
+cardPlato=document.querySelector("#cardPlato");
+cardPlato.addEventListener('mouseover',() =>{
+  console.log("imagen se mueve")
 })
-const Login=document.addEventListener(("click"), () =>{
-  console.log("Ingresaste a tu cuenta");
+const inputIngreso=inputs[0];
+
+inputIngreso.addEventListener("keyup",() =>{
+
+  console.log(inputIngreso.value);
+})
+
+btnBusc.addEventListener("click", () =>{
+
+  cardPlato.innerHTML = `<h1>${inputIngreso.value}</h1>`
+})
+const menu1 = inputs[1];
+const menu2 = inputs[2];
+
+menu1.addEventListener("change", ()=>{
+
+  console.log("cambiaste de espacio");
+})
+menu2.addEventListener("change", ()=>{
+
+console.log("cambiaste de espacio");
+})
+const metodos =[
+  "Efectivo",
+  "Debito",
+  "Tarjeta visa",
+  "Tarjeta Santa Fe",
+  "Otro"
+];
+
+const select = document.querySelector("select");
+
+      metodos.forEach(metodo =>{
+
+let option=document.createElement("option")
+
+      option.value = metodo
+      option.innerText = metodo
+
+      select.appendChild(option)
+})
+select.addEventListener("change", ()=> {
+let option= select.options[select.selectedIndex].value
+console.log(option);
+})
+btnBusc.addEventListener("click", ()=>{
+const menu= renderizarCarrito()
+
 })

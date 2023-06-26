@@ -36,7 +36,7 @@
                 </section>
                 <section id="datos">
                     <label for="Ingreso" id="bsc">Ingrese el plato a buscar</label>
-                    <input name="ingreso" id="ingreso"  placeholder="Ingrese el plato">
+                    <input name="ingreso" id="ingreso" placeholder="Ingrese el plato">
                     <button type="submit"id="busc" name="buscar">BUSCAR</button>
                     </input>
                 </section>
@@ -63,19 +63,22 @@
                                     <input type="text" id="menu2"
                                         placeholder="elegir otro menu">
                                 </label>
+                                <h4>Como vas a Pagar?</h4>
+                                <select name="metodo" id="metodoPago">
+                                    <option value="Default">Seleccione un metodo de pago</option>
+                                </select>
                                 <fieldset class="pago">
-                                    <legend class="resp3" class="resp3">Como vas a Pagar?</legend>
-                                    <label for="efectivo" class="efectivo">con efectivo
+                                    <label for="efectivo" class="efectivo">
                                     <input type="radio" id="opinion" name="opinion" value="con efectivo">
                                     </label>
-                                    <label for="debito" class="debito">con debito
+                                    <label for="debito" class="debito">
                                     <input type="radio" id="con debito" name="opinion" value="con debito">
                                     </label>    
-                                    <label for="tarjeta" class="tarjeta">con tarjeta
+                                    <label for="tarjeta" class="tarjeta">
                                     <input type="radio" id="con tarjeta" name="opinion" value="con tarjeta">
                                     </label>
-                                    <label for="santa_fe" class="santa_fe">tarjeta Santa Fe
-                                    <input type="radio" id="tarjSf" name="opinion" value="con tarjerta">
+                                    <label for="santa_fe" class="santa_fe">
+                                    <input type="radio" id="tarjSf" name="opinion" value="con tarjerta"> 
                                     </label>
                                     <button type="submit" name="btn" id="btnPedido">ENVIAR</button>
                                     <button type="reset" name="btn-limpiar" class="btn-limpiar">LIMPIAR</button>
