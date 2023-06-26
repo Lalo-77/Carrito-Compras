@@ -92,7 +92,7 @@ const mostrarPlatos = () => {
         <div class ="plato-description"></div>
         <h5>${plato.nombre}</h5>
         <h6>${plato.categoria}</h6>
-        <p class="precio">${plato.precio}</p>
+        <p class="precio">$${plato.precio}</p>
         <button id='${plato.id}' class="btn-compra">COMPRAR</button>
         </div>
         `;
@@ -107,6 +107,12 @@ const mostrarPlatos = () => {
 };
 mostrarPlatos();
 
+function buscarPlato(array,filtro){
+const encontrado = array.find ((el) => {
+    return el.nombre.includes(filtro);
+  });
+    return encontrado
+}
 function agregarAlCarrito(id) {
   console.log(id);
   console.log(carrito);
@@ -140,14 +146,14 @@ renderizarCarrito ()
 function renderizarCarrito(){
   carrito.forEach( plato => {
     const cardPlato = document.createElement("div");
-    cardPlato.setAttribute("id", "cardPlato");
+    cardPlato.setAttribute("id","cardPlato");
     cardPlato.innerHTML = `
-        <img src="${plato.img}">
-        <div class ="plato-description"></div>
-        <h5>${plato.nombre}</h5>
-        <h6>${plato.categoria}</h6>
-        <p class="precio">${plato.precio}</p>
-        <button id='${plato.id}' class="btn-compra">ELIMINAR</button>
+        <img src="${plato.img}" class="pl-img">
+        <div class ="plato-descrip"></div>
+        <h5 class ="pl-nombre">$${plato.nombre}</h5>
+        <h6 class="pl-categoria">${plato.categoria}</h6>
+        <p class="pl-precio">${plato.precio}</p>
+        <button id='${plato.id}' class="btn-comp">ELIMINAR</button>
         </div>
         `;
     contenedorCarrito.appendChild(cardPlato);
@@ -199,7 +205,7 @@ const btnPedido=document.addEventListener(("click"), () =>{
  })
 cardPlato=document.querySelector("#cardPlato");
 cardPlato.addEventListener('mouseover',() =>{
-  console.log("imagen se mueve")
+  console.log("mousse se mueve")
 })
 const inputIngreso=inputs[0];
 
@@ -247,6 +253,6 @@ let option= select.options[select.selectedIndex].value
 console.log(option);
 })
 btnBusc.addEventListener("click", ()=>{
-const menu= renderizarCarrito()
-
-})
+const menu= buscarPlato(plato,btnBusc.value)
+console.log(menu);
+});

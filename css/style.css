@@ -148,7 +148,7 @@ grid-template-areas:
 }
 #cardPlato{
     width: 400px;
-    height:500px;
+    height:470px;
 }
 .plato-description{
     color:black;
@@ -512,7 +512,7 @@ border-radius: 50px;
     color:black;
     text-align: center;
     width:500px;
-    height: 500px;
+    height:500px;
     font-size: 30px;
     font-weight: 40px;
     font-family: 'Roboto', sans-serif;
@@ -522,9 +522,53 @@ border-radius: 50px;
     color:black;
     text-align: center;
     width:500px;
-    height: 500px;
+    height: 400px;
     font-size: 30px;
     font-weight: 30px;
     font-family: 'Roboto', sans-serif;
 }
-
+.pl-img{
+    width: 200px;
+    height: 100px;
+}
+.plato-descrip{
+    color:black;
+    width: 300px;
+    height: 20px;
+    font-weight: 20px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.pl-nombre{
+    color:black;
+    width:500px;
+    height:30px;
+    font-size: 20px;
+    font-weight: 20px;
+    font-family:'Roboto',sans-serif;
+}
+.pl-categoria{
+    color:black;
+    width:300px;
+    height:20px;
+    font-size: 15px;
+    font-weight: 20px;
+    font-family:'Roboto',sans-serif;
+}
+.pl-precio{
+    width: 100px;
+    height: 10;
+    color:black;
+    font-size: 15px;
+    font-weight: 15px;
+}
+.btn-comp{
+    color:black;
+    background-color:hotpink;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    font-weight: 20px;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
