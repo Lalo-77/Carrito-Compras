@@ -185,8 +185,8 @@ function guardar(valor) {
 }
 function recuperarDatos(datos) {
   if (datos) {
-    inputUser.value = datos.usuario;
-    inputPass.value = datos.pass;
+
+    datos && ((inputUser.value=datos.usuario),(inputPass.value=datos.usuario))
   }
 }
 recuperarDatos(JSON.parse(localStorage.getItem("user")));
@@ -256,3 +256,8 @@ btnBusc.addEventListener("click", ()=>{
 const menu= buscarPlato(plato,btnBusc.value)
 console.log(menu);
 });
+
+const btnLimpiar=document.addEventListener(("click"), ()=>{
+  document.getElementsByClassName("btnLimpiar");
+  console.log("El elemento se borro");
+})
