@@ -189,15 +189,27 @@ function recuperarDatos(datos) {
     datos && ((inputUser.value=datos.usuario),(inputPass.value=datos.usuario))
   }
 }
-recuperarDatos(JSON.parse(localStorage.getItem("user")));
+recuperarDatos(JSON.parse(localStorage.getItem("user"))); 
 
-const inputU= document.getElementsByTagName("input");
-inputU[7].value= "Cristian"
-console.log(inputU[7]);
+const btnUser= document.getElementById("input-user")
+const btnPass= document.getElementById("input-pass")
 
-const inputP= document.getElementsByTagName("input");
-inputP[8].value= "7732"
-console.log(inputU[8]);
+ const btnIngresar=document.getElementById("btn-ingresar")
+
+ btnIngresar.addEventListener("click", validarDatos);
+
+ function validarDatos(e){
+e.preventDefault();
+
+console.log(inputUsuario.value);
+console.log(inputPass.value);
+ 
+ const usuario= {
+  nombre:inputNombre.value,
+  pass:inputPass.value,
+ }
+ console.log(usuario);
+ }
 
 const btnPedido=document.addEventListener(("click"), () =>{
    document.getElementById("btnPedido");

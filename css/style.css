@@ -300,8 +300,11 @@ border-radius: 50px;
     width: 500px;
     height: 300px;
 }
-.informac{
+.informac h5{
     height: 40px;
+    color: white;
+}
+
 }
 .nombre{
     width: 300px;
@@ -403,7 +406,7 @@ border-radius: 50px;
     margin: 10px;
     border-radius: 10px;
 }
-#Login{
+#btn-ingresar{
     color:black;
     background-color: greenyellow;
     width: 100px;

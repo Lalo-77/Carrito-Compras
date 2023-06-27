@@ -67,7 +67,7 @@
                                 <select name="metodo" id="metodoPago">
                                     <option value="Default">Seleccione un metodo de pago</option>
                                 </select>
-                                <fieldset class="pago">
+                                <form class="pago">
                                     <label for="efectivo" class="efectivo">
                                     <input type="radio" id="opinion" name="opinion" value="con efectivo">
                                     </label>
@@ -82,7 +82,6 @@
                                     </label>
                                     <button type="submit" name="btn" id="btnPedido">ENVIAR</button>
                                     <button type="reset" name="btnLimpiar" class="btnLimpiar">LIMPIAR</button>
-                                </fieldset>
                                 </form>
                             </form>
                         </div>
@@ -96,14 +95,13 @@
                                         <h2 id="cuenta">Ingresa a tu cuenta</h2>
                                     </div>
                                         <form id="form-login">
-                                            <legend class="informac">Ingresa tus datos personales</legend>
-                                            <input type="text" placeholder="Ingresa tu Usuario" id="user"><br>
-                                            <input type="text" placeholder="Password" id="pass"><br>
+                                            <h5 class="informac">Ingresa tus datos personales</h5>
+                                            <input type="text" placeholder="Ingresa tu Usuario" id="btn-user"><br>
+                                            <input type="text" placeholder="Password" id="btn-pass"><br>
                                             <div class="check"></div>
                                             <label for="check">Recordar</label>
-                                            <input type="checkbox" id="check" />
-                                            <p id="message"></p>
-                                            <button type="submit" id="Login" value="Ingresar" onclick="loguear()">INGRESAR</button>
+
+                                            <button type="submit" id="btn-ingresar" value="Ingresar">INGRESAR</button>
                                             <button type="reset" name="btn-borrar" class="btn-2lim">LIMPIAR</button>
                                             </div>
                                         </form> 
