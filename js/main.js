@@ -106,21 +106,20 @@ const mostrarPlatos = () => {
   });
 };
 mostrarPlatos();
-
 function buscarPlato(array,filtro){
-const encontrado = array.find ((el) => {
+    const encontrado = array.find ((el) => {
     return el.nombre.includes(filtro);
   });
     return encontrado
 }
 function agregarAlCarrito(id) {
-  console.log(id);
-  console.log(carrito);
+    console.log(id);
+    console.log(carrito);
 
 const total =carrito.reduce( (acc, el) => acc += el.precio,0)
-console.log(total);
+    console.log(total);
 
-  const existe = carrito.some((plato) => plato.id === parseInt (id));
+const existe = carrito.some((plato) => plato.id === parseInt (id));
        console.log(existe);
 
   if (existe) {
@@ -144,8 +143,8 @@ renderizarCarrito ()
 }
 
 function renderizarCarrito(){
-  carrito.forEach( plato => {
-    const cardPlato = document.createElement("div");
+    carrito.forEach( plato => {
+const cardPlato = document.createElement("div");
     cardPlato.setAttribute("id","cardPlato");
     cardPlato.innerHTML = `
         <img src="${plato.img}" class="pl-img">
@@ -161,17 +160,17 @@ function renderizarCarrito(){
 }
 const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
-console.log(renderizarCarrito);
+    console.log(renderizarCarrito);
 
-const btnBusc = document.querySelector("#busc")
-      busc.addEventListener("click", () => {
-      console.log("busc");
+const btnBusc=document.querySelector("#btn-busc")
+     btnBusc.addEventListener("click", () => {
+     console.log("btn-busc");
 })
 const inputUser = document.querySelector("#user"),
-  inputPass = document.querySelector("#pass"),
-  check = document.querySelector("#check"),
-  formulario = document.querySelector("#form-login"),
-  message = document.querySelector("#message");
+    inputPass = document.querySelector("#pass"),
+    check = document.querySelector("#check"),
+    formulario = document.querySelector("#form-login"),
+    message = document.querySelector("#message");
 
 function guardar(valor) {
   const user = { usuario: inputUser.value, pass: inputPass.value };
@@ -201,20 +200,19 @@ const btnPass= document.getElementById("input-pass")
  function validarDatos(e){
 e.preventDefault();
 
-console.log(inputUsuario.value);
+console.log(inputUser.value);
 console.log(inputPass.value);
  
  const usuario= {
-  nombre:inputNombre.value,
+  nombre:inputUser.value,
   pass:inputPass.value,
  }
  console.log(usuario);
  }
-
-const btnPedido=document.addEventListener(("click"), () =>{
-   document.getElementById("btnPedido");
-   console.log("Enviaste tu pedido");
- })
+ const btnPedido=document.querySelector("#btnPedido");
+    btnPedido.addEventListener("click", () =>{
+    console.log("Enviaste tu pedido")
+    });
 cardPlato=document.querySelector("#cardPlato");
 cardPlato.addEventListener('mouseover',() =>{
   console.log("mousse se mueve")
@@ -270,6 +268,6 @@ console.log(menu);
 });
 
 const btnLimpiar=document.addEventListener(("click"), ()=>{
-  document.getElementsByClassName("btnLimpiar");
-  console.log("El elemento se borro");
+   document.getElementsByClassName("btnLimpiar");
+   console.log("El elemento se borro");
 })

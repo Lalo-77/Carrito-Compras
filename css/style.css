@@ -300,12 +300,14 @@ border-radius: 50px;
     width: 500px;
     height: 300px;
 }
-.informac h5{
+.informac {
     height: 40px;
     color: white;
+    font-weight: 30px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
-}
 .nombre{
     width: 300px;
     height: 50px;
@@ -490,7 +492,7 @@ border-radius: 50px;
     width: 50px;
     height: 20px;
 }
-#busc{
+#btn-busc{
     color:black;
     background-color:greenyellow;
     width: 63px;
@@ -500,12 +502,19 @@ border-radius: 50px;
     font-size: 10px;
     font-family: 'Roboto', sans-serif;
 };
-#user{
+.user{
     margin-left: 10px;
-    margin-bottom: 10px;
+    margin: 20px;
+    width: 200px;
+    height: 30px;
+
 }
-#pass{
+.pass{
     margin-left: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 30px;
+
 }
 #datos{
     margin-left: 800px;
