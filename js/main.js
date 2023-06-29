@@ -163,10 +163,6 @@ const compraTotal =("renderizarCarrito");
     console.log(renderizarCarrito);
 
 const btnBusc=document.querySelector("#btn-busc")
-      btnBusc.addEventListener("click", () => {
-          console.log("btn-busc");
-})
-
 btnBusc.addEventListener("click", () => {
 	const input = document.getElementById("input-ingreso");
 	const menu = buscarPlato(plato, input.value);
@@ -269,12 +265,8 @@ select.addEventListener("change", ()=> {
 let option= select.options[select.selectedIndex].value
 console.log(option);
 })
-btnBusc.addEventListener("click", ()=>{
-const menu= buscarPlato(plato,btnBusc.value)
-console.log(menu);
-});
 
-const btnLimpiar=document.addEventListener(("click"), ()=>{
-   document.getElementsByClassName("btnLimpiar");
-   console.log("El elemento se borro");
-})
+// const btnLimpiar=document.addEventListener(("click"), ()=>{
+//    document.getElementsByClassName("btnLimpiar");
+//    console.log("El elemento se borro");
+// })
