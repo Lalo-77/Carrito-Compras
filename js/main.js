@@ -163,9 +163,16 @@ const compraTotal =("renderizarCarrito");
     console.log(renderizarCarrito);
 
 const btnBusc=document.querySelector("#btn-busc")
-     btnBusc.addEventListener("click", () => {
-     console.log("btn-busc");
+      btnBusc.addEventListener("click", () => {
+          console.log("btn-busc");
 })
+
+btnBusc.addEventListener("click", () => {
+	const input = document.getElementById("input-ingreso");
+	const menu = buscarPlato(plato, input.value);
+	      console.log(menu);
+      });
+
 const inputUser = document.querySelector("#user"),
     inputPass = document.querySelector("#pass"),
     check = document.querySelector("#check"),
