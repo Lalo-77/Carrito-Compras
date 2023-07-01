@@ -147,7 +147,7 @@ grid-template-areas:
 "dtos dtos dtos dtos dtos"
 }
 #cardPlato{
-    width: 400px;
+    width: 310px;
     height:470px;
 }
 .plato-description{
@@ -307,7 +307,6 @@ border-radius: 50px;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
 }
-
 .nombre{
     width: 300px;
     height: 50px;
@@ -416,11 +415,11 @@ border-radius: 50px;
     margin: 10px;
     border-radius: 10px;
 }
-.btn-2lim{
+.btn-crear{
     color:black;
     background-color: greenyellow;
-    width: 100px;
-    height: 43px;
+    width: 130px;
+    height: 30px;
     margin: 10px;
     border-radius: 10px;
 }
@@ -481,12 +480,14 @@ border-radius: 50px;
     font-family: 'Roboto', sans-serif;
 }
 #bsc{
-    color:black;
+    background-color:coral;
+    color:cornflowerblue;
     font-weight: 30px;
     font-size: 25px;
     font-family: 'Roboto', sans-serif;
+border-radius: 10px;
     width: 300px;
-    height: 20px;
+    height: 40px;
     };
 #ingreso{
     width: 50px;
@@ -502,19 +503,17 @@ border-radius: 50px;
     font-size: 10px;
     font-family: 'Roboto', sans-serif;
 };
-.user{
+#user{
     margin-left: 10px;
     margin: 20px;
     width: 200px;
     height: 30px;
-
 }
-.pass{
+#pass{
     margin-left: 10px;
-    margin-bottom: 20px;
+    margin: 20px;
     width: 200px;
     height: 30px;
-
 }
 #datos{
     margin-left: 800px;

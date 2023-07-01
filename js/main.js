@@ -80,7 +80,10 @@ const plato = [
     categoria: "postre",
   },
 ];
-const carrito = [];
+const carrito = {
+plato: [],
+total:0,
+};
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
 const contenedorCarrito=document.querySelector("#contenedorCarrito");
 const mostrarPlatos = () => {
@@ -141,7 +144,6 @@ const existe = carrito.some((plato) => plato.id === parseInt (id));
 localStorage.setItem("carrito", JSON.stringify(carrito));
 renderizarCarrito ()
 }
-
 function renderizarCarrito(){
     carrito.forEach( plato => {
 const cardPlato = document.createElement("div");
@@ -163,10 +165,10 @@ const compraTotal =("renderizarCarrito");
     console.log(renderizarCarrito);
 
 const btnBusc=document.querySelector("#btn-busc")
-btnBusc.addEventListener("click", () => {
+      btnBusc.addEventListener("click", () => {
 	const input = document.getElementById("input-ingreso");
 	const menu = buscarPlato(plato, input.value);
-	      console.log(menu);
+	    console.log(menu);
       });
 
 const inputUser = document.querySelector("#user"),
@@ -199,7 +201,6 @@ const btnPass= document.getElementById("input-pass")
  const btnIngresar=document.getElementById("btn-ingresar")
 
  btnIngresar.addEventListener("click", validarDatos);
-
  function validarDatos(e){
 e.preventDefault();
 
@@ -265,8 +266,3 @@ select.addEventListener("change", ()=> {
 let option= select.options[select.selectedIndex].value
 console.log(option);
 })
-
-// const btnLimpiar=document.addEventListener(("click"), ()=>{
-//    document.getElementsByClassName("btnLimpiar");
-//    console.log("El elemento se borro");
-// })
