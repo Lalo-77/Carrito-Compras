@@ -162,7 +162,7 @@ const cardPlato = document.createElement("div");
 }
 const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
-    console.log(renderizarCarrito);
+   
 
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
@@ -204,14 +204,10 @@ const btnPass= document.getElementById("input-pass")
  function validarDatos(e){
 e.preventDefault();
 
-console.log(inputUser.value);
-console.log(inputPass.value);
- 
  const usuario= {
   nombre:inputUser.value,
   pass:inputPass.value,
- }
- console.log(usuario);
+  }
  }
  const btnPedido=document.querySelector("#btnPedido");
     btnPedido.addEventListener("click", () =>{
@@ -219,14 +215,9 @@ console.log(inputPass.value);
     });
 cardPlato=document.querySelector("#cardPlato");
 cardPlato.addEventListener('mouseover',() =>{
-  console.log("mousse se mueve")
 })
 const inputIngreso=inputs[0];
 
-inputIngreso.addEventListener("keyup",() =>{
-
-  console.log(inputIngreso.value);
-})
 
 btnBusc.addEventListener("click", () =>{
 
@@ -235,14 +226,6 @@ btnBusc.addEventListener("click", () =>{
 const menu1 = inputs[1];
 const menu2 = inputs[2];
 
-menu1.addEventListener("change", ()=>{
-
-  console.log("cambiaste de espacio");
-})
-menu2.addEventListener("change", ()=>{
-
-console.log("cambiaste de espacio");
-})
 const metodos =[
   "Efectivo",
   "Debito",
