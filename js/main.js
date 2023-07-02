@@ -80,10 +80,8 @@ const plato = [
     categoria: "postre",
   },
 ];
-const carrito = {
-plato: [],
-total:0,
-};
+const carrito = [];
+
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
 const contenedorCarrito=document.querySelector("#contenedorCarrito");
 const mostrarPlatos = () => {
@@ -96,6 +94,7 @@ const mostrarPlatos = () => {
         <h5>${plato.nombre}</h5>
         <h6>${plato.categoria}</h6>
         <p class="precio">$${plato.precio}</p>
+        <img src="./assets/img/carrito.png" class="carrito" alt="">
         <button id='${plato.id}' class="btn-compra">COMPRAR</button>
         </div>
         `;
@@ -108,20 +107,33 @@ const mostrarPlatos = () => {
     });
   });
 };
-mostrarPlatos();
+    mostrarPlatos();
 function buscarPlato(array,filtro){
-    const encontrado = array.find ((el) => {
-    return el.nombre.includes(filtro);
+const encontrado = array.find ((el) => {
+      return el.nombre.includes(filtro);
   });
     return encontrado
 }
 function agregarAlCarrito(id) {
     console.log(id);
     console.log(carrito);
-
-const total =carrito.reduce( (acc, el) => acc += el.precio,0)
+  
+const total =carrito.reduce((acc, el) => (acc + el.precio), 0);
     console.log(total);
+/* let sumar = contenedorCarrito.querySelector("sumar");
+    sumar.addEventListener("click" , ()=> {
+    contenedorCarrito.cantidad++;
+    contenedorCarrito();
+ })
+    plato.id =document.createElement("plato.id");
+    plato.id.innerText="eli";
+    plato.id.classList= "delete-product";
+    contenedorCarrito.append("plato.id");
 
+    plato.id.addEventListener("click");
+
+    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
+*/
 const existe = carrito.some((plato) => plato.id === parseInt (id));
        console.log(existe);
 
@@ -131,8 +143,7 @@ const existe = carrito.some((plato) => plato.id === parseInt (id));
   } else {
     let platoEncontrado = plato.find(p => p.id ==parseInt(id));
         console.log(platoEncontrado);
-
-    carrito.push(({ 
+        carrito.push(({ 
         id:platoEncontrado.id,
         nombre:platoEncontrado.nombre,
         precio:platoEncontrado.precio,
@@ -141,9 +152,14 @@ const existe = carrito.some((plato) => plato.id === parseInt (id));
         img:platoEncontrado.img,
   }))
 }
-localStorage.setItem("carrito", JSON.stringify(carrito));
-renderizarCarrito ()
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    renderizarCarrito ()
 }
+const btnCrear=document.querySelector(".btn-crear");
+      btnCrear.addEventListener("click", () =>{
+      console.log("Enviaste tu pedido")
+      });
+
 function renderizarCarrito(){
     carrito.forEach( plato => {
 const cardPlato = document.createElement("div");
@@ -151,10 +167,11 @@ const cardPlato = document.createElement("div");
     cardPlato.innerHTML = `
         <img src="${plato.img}" class="pl-img">
         <div class ="plato-descrip"></div>
-        <h5 class ="pl-nombre">$${plato.nombre}</h5>
+        <h5 class ="pl-nombre">${plato.nombre}</h5>
         <h6 class="pl-categoria">${plato.categoria}</h6>
-        <p class="pl-precio">${plato.precio}</p>
-        <button id='${plato.id}' class="btn-comp">ELIMINAR</button>
+        <p class="pl-precio">$${plato.precio}</p>
+        <img src="./assets/img/carrito.png" class="carrito" alt="">
+        <button id='${plato.id}'type="submit">ELIMINAR</button>
         </div>
         `;
     contenedorCarrito.appendChild(cardPlato);
@@ -162,14 +179,13 @@ const cardPlato = document.createElement("div");
 }
 const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
-   
 
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
 	const input = document.getElementById("input-ingreso");
 	const menu = buscarPlato(plato, input.value);
-	    console.log(menu);
-      });
+	     console.log(menu);
+  });
 
 const inputUser = document.querySelector("#user"),
     inputPass = document.querySelector("#pass"),
@@ -178,19 +194,19 @@ const inputUser = document.querySelector("#user"),
     message = document.querySelector("#message");
 
 function guardar(valor) {
-  const user = { usuario: inputUser.value, pass: inputPass.value };
-  if (valor === "sessionStorage") {
-    sessionStorage.setItem("user", JSON.stringify(user));
+const user = { usuario: inputUser.value, pass: inputPass.value };
+if(valor === "sessionStorage") {
+     sessionStorage.setItem("user", JSON.stringify(user));
   }
-  if (valor === "localStorage") {
-    localStorage.setItem("user", JSON.stringify(user));
+if(valor === "localStorage") {
+      localStorage.setItem("user", JSON.stringify(user));
   }
   return user;
 }
 function recuperarDatos(datos) {
-  if (datos) {
+  if(datos) {
 
-    datos && ((inputUser.value=datos.usuario),(inputPass.value=datos.usuario))
+     datos && ((inputUser.value=datos.usuario),(inputPass.value=datos.usuario))
   }
 }
 recuperarDatos(JSON.parse(localStorage.getItem("user"))); 
@@ -198,30 +214,29 @@ recuperarDatos(JSON.parse(localStorage.getItem("user")));
 const btnUser= document.getElementById("input-user")
 const btnPass= document.getElementById("input-pass")
 
- const btnIngresar=document.getElementById("btn-ingresar")
-
- btnIngresar.addEventListener("click", validarDatos);
- function validarDatos(e){
-e.preventDefault();
+const btnIngresar=document.getElementById("btn-ingresar")
+      btnIngresar.addEventListener("click", validarDatos);
+      
+function validarDatos(e){
+      e.preventDefault();
 
  const usuario= {
-  nombre:inputUser.value,
-  pass:inputPass.value,
+      nombre:inputUser.value,
+      pass:inputPass.value,
   }
  }
  const btnPedido=document.querySelector("#btnPedido");
-    btnPedido.addEventListener("click", () =>{
-    console.log("Enviaste tu pedido")
+      btnPedido.addEventListener("click", () =>{
+      console.log("Enviaste tu pedido")
     });
-cardPlato=document.querySelector("#cardPlato");
-cardPlato.addEventListener('mouseover',() =>{
+     cardPlato=document.querySelector("#cardPlato");
+     cardPlato.addEventListener('mouseover',() =>{
 })
 const inputIngreso=inputs[0];
 
+     btnBusc.addEventListener("click", () =>{
 
-btnBusc.addEventListener("click", () =>{
-
-  cardPlato.innerHTML = `<h1>${inputIngreso.value}</h1>`
+     cardPlato.innerHTML = `<h1>${inputIngreso.value}</h1>`
 })
 const menu1 = inputs[1];
 const menu2 = inputs[2];
@@ -245,7 +260,20 @@ let option=document.createElement("option")
 
       select.appendChild(option)
 })
-select.addEventListener("change", ()=> {
+     select.addEventListener("change", ()=> {
 let option= select.options[select.selectedIndex].value
-console.log(option);
+    console.log(option);
 })
+const btnTres=document.querySelector(".btnTres");
+      btnTres.addEventListener("click", () =>{
+      console.log("Se envio tu pedido")
+    });
+const btnLimpiar=document.querySelector(".btnLimpiar");
+      btnLimpiar.addEventListener("click", () =>{
+      console.log("Se elimino el plato")
+    });
+const btnEliminar=document.querySelector(".btnEliminar");
+      btnEliminar.addEventListener("click", () =>{
+      console.log("Se elimino el plato")
+     });
+   

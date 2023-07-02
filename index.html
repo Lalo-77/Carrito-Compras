@@ -16,14 +16,9 @@
                 <div class="columnas">
                     <span id="logo"></span>
                     <img  class="escudo"  src="../assets/img/escudo-la-fortaleza.png">
-                    <a href="../index.html"></a>
-                    <a href="../registro.html"></a>
+                    <a href=>LA FORTALEZA</a>
                 </div>
             <div class="columnas u-pull-right"> </div>
-                <ul class="navBar">
-                    <li class="submenu">
-                    </li>
-                </ul>
             </div>
         </div>
     <header>
@@ -39,6 +34,9 @@
                     <label for="Ingreso" id="bsc">Ingrese el plato a buscar</label>
                     <input name="ingreso" id="input-ingreso" placeholder="Ingrese el plato">
                     <button type="submit"id="btn-busc" name="buscar" class="busc" >BUSCAR</button>
+                    <div class="reg">
+                        <a href="./pages/registro.html" class="registro">REGISTRO</a>
+                     </div>
                     </input>
                 </section>
         <section>
@@ -82,7 +80,8 @@
                                     <input type="radio" id="tarjSf" name="opinion" value="con tarjerta"> 
                                     </label>
                                     <button type="button" name="btnPedido" id="btnPedido">ENVIAR</button>
-                                    <button type="reset" name="btnLimpiar" class="btnLimpiar">LIMPIAR</button>
+
+                                    <button type="button" name="btnLimpiar" class="btnLimpiar">LIMPIAR</button>
                                 </form>
                             </form>
                         </div>
@@ -116,7 +115,7 @@
                         <h3>Carrito</h3>
                         <p>total:$<span id="total">0</span></p>
                         <button type="submit"name="btnTres" class="btnTres">ENVIAR</button>
-                        <button type="reset" name="btn-borrar" class="btn-3lim">LIMPIAR</button>
+                        <button type="reset" name="btnEliminar" class="btnEliminar">ELIMINAR</button>
                     </label>
                     <div id="contenedorCarrito"></div>
                 </div>
@@ -142,6 +141,5 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
         <script src="./js/main.js"></script>
-        <script src="./js/registro.js"></script>
 </body>
 </html>
