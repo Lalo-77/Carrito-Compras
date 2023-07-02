@@ -60,12 +60,12 @@ width: 90%;
 .reg{
     width: 70px;
     height: 70px;
-    color: burlywood;
     float:right;
     margin: 20px;
 }
 .registro{
     background-color: cornflowerblue;
+    color:black;
     float:right;
     font-weight: 20px;
     font-size: 20px;
@@ -442,6 +442,9 @@ border-radius: 50px;
     height: 40px;
     margin: 10px;
     border-radius: 10px;
+}
+.crearCuenta{
+    color: black;
 }
 .card{
    background-color: var(--second-color);

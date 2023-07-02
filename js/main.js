@@ -117,7 +117,7 @@ const encontrado = array.find ((el) => {
 function agregarAlCarrito(id) {
     console.log(id);
     console.log(carrito);
-  
+
 const total =carrito.reduce((acc, el) => (acc + el.precio), 0);
     console.log(total);
 /* let sumar = contenedorCarrito.querySelector("sumar");
@@ -143,7 +143,7 @@ const existe = carrito.some((plato) => plato.id === parseInt (id));
   } else {
     let platoEncontrado = plato.find(p => p.id ==parseInt(id));
         console.log(platoEncontrado);
-        carrito.push(({ 
+        carrito.push(({
         id:platoEncontrado.id,
         nombre:platoEncontrado.nombre,
         precio:platoEncontrado.precio,
@@ -171,7 +171,7 @@ const cardPlato = document.createElement("div");
         <h6 class="pl-categoria">${plato.categoria}</h6>
         <p class="pl-precio">$${plato.precio}</p>
         <img src="./assets/img/carrito.png" class="carrito" alt="">
-        <button id='${plato.id}'type="submit">ELIMINAR</button>
+        <button id='${plato.id}'type="reset" class="btnQuitar">ELIMINAR</button>
         </div>
         `;
     contenedorCarrito.appendChild(cardPlato);
@@ -209,14 +209,14 @@ function recuperarDatos(datos) {
      datos && ((inputUser.value=datos.usuario),(inputPass.value=datos.usuario))
   }
 }
-recuperarDatos(JSON.parse(localStorage.getItem("user"))); 
+recuperarDatos(JSON.parse(localStorage.getItem("user")));
 
 const btnUser= document.getElementById("input-user")
 const btnPass= document.getElementById("input-pass")
 
 const btnIngresar=document.getElementById("btn-ingresar")
       btnIngresar.addEventListener("click", validarDatos);
-      
+
 function validarDatos(e){
       e.preventDefault();
 
@@ -276,4 +276,7 @@ const btnEliminar=document.querySelector(".btnEliminar");
       btnEliminar.addEventListener("click", () =>{
       console.log("Se elimino el plato")
      });
-   
+// const btnQuitar=document.querySelector(".btnQuitar");
+//       btnQuitar.addEventListener("click", () =>{
+//         console.log("Se elimino el plato")
+// });
