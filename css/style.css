@@ -437,8 +437,8 @@ border-radius: 50px;
 .btn-crear{
     color:black;
     background-color: greenyellow;
-    width: 130px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     margin: 10px;
     border-radius: 10px;
 }
@@ -605,4 +605,73 @@ border-radius: 50px;
 #trz{
     width: 500px;
     height: 500px;
+}
+.btn-crearCta{
+    color:black;
+    background-color: greenyellow;
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+body.registro{
+        background-color: #85FFBD;
+        background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    }
+body.encab{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+    }
+body.navBar{
+        display: flex;
+        justify-content:space-evenly;
+        font-weight:20px;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+body.navBar li{
+        list-style: none;
+    }
+body.navBar li a{
+        text-decoration: none;
+        color:white;
+        font-size: 20px ;
+}
+body.navBar li a:hover{
+        color:red;
+}
+body.logo-png {
+        width: 30px;
+        height: 30px;
+}
+body.logo a{
+    color:firebrick;
+    text-decoration: none;
+    font-weight:30px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    width: 30px;
+    height: 30px;
+}
+body.escudo{
+    width: 50px;
+    height: 70px;
+}
+body.carrito{
+    width: 25px;
+    height: 25px;
+}
+body.pie{
+    grid-area: pie;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    gap: 30px;
+    justify-content:flex-start;
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
 }
