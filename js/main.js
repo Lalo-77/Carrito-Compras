@@ -118,22 +118,6 @@ function agregarAlCarrito(id) {
     console.log(id);
     console.log(carrito);
 
-const total =carrito.reduce((acc, el) => (acc + el.precio), 0);
-    console.log(total);
-/* let sumar = contenedorCarrito.querySelector("sumar");
-    sumar.addEventListener("click" , ()=> {
-    contenedorCarrito.cantidad++;
-    contenedorCarrito();
- })
-    plato.id =document.createElement("plato.id");
-    plato.id.innerText="eli";
-    plato.id.classList= "delete-product";
-    contenedorCarrito.append("plato.id");
-
-    plato.id.addEventListener("click");
-
-    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
-*/
 const existe = carrito.some((plato) => plato.id === parseInt (id));
        console.log(existe);
 
@@ -151,15 +135,20 @@ const existe = carrito.some((plato) => plato.id === parseInt (id));
         categoria:platoEncontrado.categoria,
         img:platoEncontrado.img,
   }))
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  renderizarCarrito ()
 }
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    renderizarCarrito ()
-}
+const total =carrito.reduce((acc, el) =>acc + (el.precio * el.cantidad) , 0);
+    console.log(total);
+
+const mostrarTotal = document.getElementById("total")
+      mostrarTotal.innerText = total
+localStorage.setItem("mostrarTotal", JSON.stringify(mostrarTotal));
+} 
 const btnCrear=document.querySelector(".btn-crear");
       btnCrear.addEventListener("click", () =>{
       console.log("Enviaste tu pedido")
       });
-
 function renderizarCarrito(){
     carrito.forEach( plato => {
 const cardPlato = document.createElement("div");
@@ -171,7 +160,7 @@ const cardPlato = document.createElement("div");
         <h6 class="pl-categoria">${plato.categoria}</h6>
         <p class="pl-precio">$${plato.precio}</p>
         <img src="./assets/img/carrito.png" class="carrito" alt="">
-        <button id='${plato.id}'type="reset" class="btnQuitar">ELIMINAR</button>
+        <button id='${plato.id}' class="btn-borrar">ELIMINAR</button>
         </div>
         `;
     contenedorCarrito.appendChild(cardPlato);
@@ -186,7 +175,6 @@ const btnBusc=document.querySelector("#btn-busc")
 	const menu = buscarPlato(plato, input.value);
 	     console.log(menu);
   });
-
 const inputUser = document.querySelector("#user"),
     inputPass = document.querySelector("#pass"),
     check = document.querySelector("#check"),
@@ -248,7 +236,6 @@ const metodos =[
   "Tarjeta Santa Fe",
   "Otro"
 ];
-
 const select = document.querySelector("select");
 
       metodos.forEach(metodo =>{
@@ -276,7 +263,4 @@ const btnEliminar=document.querySelector(".btnEliminar");
       btnEliminar.addEventListener("click", () =>{
       console.log("Se elimino el plato")
      });
-// const btnQuitar=document.querySelector(".btnQuitar");
-//       btnQuitar.addEventListener("click", () =>{
-//         console.log("Se elimino el plato")
-// });
+     

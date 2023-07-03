@@ -12,12 +12,19 @@
 </head>
 <body class="registro">
   <nav>
-    <ul>
-      <li>
-        <li><a href="../index.html">inicio</a</li>
-      </li>
+    <ul class="enlace">
+     <li><a href="../index.html" class="inicio">inicio</a>
+    </li>
     </ul>
   </nav>
+  <header>
+  </header>
+  <main>
+    <section>
+      <h1>
+        REGISTRATE 
+      </h1>
+    </section>
     <form action="" method="get">
         <fieldset>
             <legend>Ingresa tus datos personales</legend>
@@ -27,25 +34,25 @@
               </label>
               <label for="Usuario">
                 <span>Usuario</span>
-                <input type="text" id="usuario" placeholder="ingresa tu usuario">
+                <input type="text" id="usuario" placeholder="ingresa tu usuario" required >
               </label>
               <label for="email">
                 <span>email:</span>
-                <input type="email" id="e-mail" placeholder="ingresa tu mail" required>
+                <input type="email" id="e-mail" placeholder="ingresa tu mail">
               </label>
               <label for="constrasena">
               <span>contrasena</span>
               <input type="text" name="contrasena" placeholder="Ingresa tu Contrasena" id="pass" class="contrasena"><br>
               
-              </label>
+              </label> 
         </fieldset>
         <fieldset>
-            <legend>GUARDAR</legend>
+            <legend>GUARDAR DATOS</legend>
                 <label for="GUARDAR-DATOS"></label>
-                <input type="submit" id="btn-ingresar" value="Ingresar"INGRESAR>
-                <input type="reset" name="btn-crearCta" value="crear Cuenta" class="btn-crearCta"CREAR>
+                <button type="submit" id="btn-crearCta" value="crear Cuenta" class="btn-crearCta">CREAR</button>
         </fieldset>
     </form>
+  </main>
 </body>
 <footer>
     <nav class="datos">

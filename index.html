@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comidas Saludables La Fortaleza</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="shortcut icon" href="./assets/img/escudo-la-fortaleza.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body class="mostrador">
+    <head> 
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comidas Saludables La Fortaleza</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="shortcut icon" href="./assets/img/escudo-la-fortaleza.png" type="image/x-icon">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body class="mostrador">
         <div class="encab">
             <div class="row">
                 <div class="columnas">
@@ -21,16 +21,16 @@
             <div class="columnas u-pull-right"> </div>
             </div>
         </div>
-    <header>
-    </header>
-    <main class="igual">
+        <header>
+        </header>
+        <main class="igual">
         <section class="titulo">
             <h1>RESTAURANT LA FORTALEZA</h1>
         </section>
-                <section class="menu">
+         <section class="menu">
                     <h2>NUESTRO MENU: Alimentos Naturales</h2>
-                </section>
-                <section id="datos">
+        </section>
+        <section id="datos">
                     <label for="Ingreso" id="bsc">Ingrese el plato a buscar</label>
                     <input name="ingreso" id="input-ingreso" placeholder="Ingrese el plato">
                     <button type="submit"id="btn-busc" name="buscar" class="busc" >BUSCAR</button>
@@ -38,11 +38,11 @@
                         <a href="./pages/registro.html" class="registro">REGISTRO</a>
                      </div>
                     </input>
-                </section>
+        </section>
         <section>
             <div id="contenedorPlatos">
         </section>
-            <section class="dtos">
+        <section class="dtos">
                 <div class="uuno">
                     <div class="carrito">
                         <h3>Carrito de Compras </h3>
@@ -62,22 +62,22 @@
                                     <input type="text" id="menu2"
                                         placeholder="elegir otro menu">
                                 </label>
-                                <h4>Como vas a Pagar?</h4>
+                                <h4 class="metPago">Como vas a Pagar?</h4>
                                 <select name="metodo" id="metodoPago">
                                     <option value="Default">Seleccione un metodo de pago</option>
                                 </select>
                                 <form class="pago">
                                     <label for="efectivo" class="efectivo">
-                                    <input type="radio" id="opinion" name="opinion" value="con efectivo">
+                                    
                                     </label>
                                     <label for="debito" class="debito">
-                                    <input type="radio" id="con debito" name="opinion" value="con debito">
+                                   
                                     </label>    
                                     <label for="tarjeta" class="tarjeta">
-                                    <input type="radio" id="con tarjeta" name="opinion" value="con tarjeta">
+                                   
                                     </label>
                                     <label for="santa_fe" class="santa_fe">
-                                    <input type="radio" id="tarjSf" name="opinion" value="con tarjerta"> 
+                                   
                                     </label>
                                     <button type="button" name="btnPedido" id="btnPedido">ENVIAR</button>
 
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="doss">
+                <div class="doss">
                         <form id="cja" action="" method="post">
                             <fieldset>
                                 <div class="cja2">
@@ -104,11 +104,11 @@
                                             <input type="radio" name="select"> 
                                             <button type="submit" id="btn-ingresar" value="Ingresar">INGRESAR</button>
                                             <button type="submit" name="btn-crear"  value="registro" class="btn-crear"><a href="./pages/registro.html" class="crearCuenta">REGISTRO</a></button>
-                                            </div>
                                         </form> 
+                                </div> 
                             </fieldset>
                         </form>
-                    </div>
+                </div>
                 </div>
                 <div class="tres">
                     <label id="trz">
@@ -119,9 +119,9 @@
                     </label>
                     <div id="contenedorCarrito"></div>
                 </div>
-            </section>
-    </main>
-    <footer class="pie">
+        </section>
+        </main>
+        <footer class="pie">
         <nav class="datos">
             <p>Alumno: Cristian Nuñez</p>
             <p>Santa Fe</p>
@@ -136,10 +136,10 @@
                     src="../assets/img/facebook.png" alt=""></a>
             <a href=""><img src="../assets/img/twiter.png" alt=""></a>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-    <script src="./js/main.js"></script>
-</body>
+        <script src="./js/main.js"></script>
+    </body>
 </html>
