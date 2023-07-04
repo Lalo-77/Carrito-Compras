@@ -263,4 +263,16 @@ const btnEliminar=document.querySelector(".btnEliminar");
       btnEliminar.addEventListener("click", () =>{
       console.log("Se elimino el plato")
      });
+const input1 = document.getElementById("menu1");
+const input2 = document.getElementById("menu2");
+input1.onchange = () => {console.log("se cambio de campo")};
+input2.onchange = () => {console.log("se cambio de campo")};
+
+const input3 = document.getElementById("user");
+const input4 = document.getElementById("pass");
+input3.onchange = () => {console.log("se cambio de campo")};
+input4.onchange = () => {console.log("se cambio de campo")};
+
+
+
      
