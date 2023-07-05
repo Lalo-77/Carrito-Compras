@@ -175,8 +175,10 @@ const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
 
 function eliminarDelCarrito(id){
-
+console.log("el plato " + id + " " + "se elimino");
 }
+eliminarDelCarrito(plato.id)
+
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
 	const input = document.getElementById("input-ingreso");

@@ -151,7 +151,7 @@ h1{
     grid-area: contenedorPlatos;
     width:100%;
     height: 100%;
-    margin: 40px;
+    margin: 10px;
 }
 #contenedorPlatos{
     display: grid;
