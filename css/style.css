@@ -547,7 +547,7 @@ border-radius: 50px;
     color:black;
     text-align: center;
     width:500px;
-    height:320px;
+    height:300px;
     font-size: 30px;
     font-weight: 40px;
     font-family: 'Roboto', sans-serif;
@@ -564,27 +564,27 @@ border-radius: 50px;
 }
 .pl-img{
     width: 200px;
-    height: 100px;
+    height: 140px;
 }
 .plato-descrip{
     color:black;
-    width: 300px;
-    height: 20px;
+    width: 500px;
+    height: 30px;
     font-weight: 20px;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
 }
 .pl-nombre{
     color:black;
-    width:500px;
-    height:30px;
+    width:300px;
+    height:20px;
     font-size: 20px;
     font-weight: 20px;
     font-family:'Roboto',sans-serif;
 }
 .pl-categoria{
     color:black;
-    width:300px;
+    width:200px;
     height:20px;
     font-size: 15px;
     font-weight: 20px;
@@ -609,7 +609,7 @@ border-radius: 50px;
 }
 #trz{
     width: 500px;
-    height: 500px;
+    height: 200px;
 }
 .btn-crearCta{
     color:black;
@@ -634,6 +634,11 @@ border-radius: 50px;
 }
 .metPago{
     margin-left: 40px;
+}
+.card{
+    width: 500px;
+    height: 400px;
+    border-color: black;
 }
 body.registro{
         background-color: #85FFBD;

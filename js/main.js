@@ -160,15 +160,23 @@ const cardPlato = document.createElement("div");
         <h6 class="pl-categoria">${plato.categoria}</h6>
         <p class="pl-precio">$${plato.precio}</p>
         <img src="./assets/img/carrito.png" class="carrito" alt="">
-        <button id='${plato.id}' class="btn-borrar">ELIMINAR</button>
+        <button id='btnEliminar-${plato.id}' class="btn-borrar">ELIMINAR</button>
         </div>
         `;
     contenedorCarrito.appendChild(cardPlato);
+
+const btnEliminar = document.getElementById(`btnEliminar-${plato.id}`)
+btnEliminar.addEventListener("click", () =>{
+  eliminarDelCarrito(plato.id)
+   })
   })
-}
+  }
 const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
 
+function eliminarDelCarrito(id){
+
+}
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
 	const input = document.getElementById("input-ingreso");
