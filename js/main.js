@@ -84,7 +84,7 @@ const carrito = [];
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
 const contenedorCarrito=document.querySelector("#contenedorCarrito");
 const mostrarPlatos = () => {
-      plato.forEach((plato) => {
+    plato.forEach((plato) => {
 const cardPlato = document.createElement("div");
       cardPlato.setAttribute("id", "cardPlato");
       cardPlato.innerHTML = `
@@ -174,7 +174,7 @@ const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
 
 function eliminarDelCarrito(id){
-console.log("el plato " + id + " " + "se elimino");
+//console.log("el plato " + id + " " + "se elimino");
 }
 eliminarDelCarrito(plato.id)
 
@@ -307,41 +307,28 @@ function solicitarPlato (plato){
     },3000);
   });
 }
-contenedorPlatos = document.querySelector("#contenedorPlatos");
 
 solicitarPlato(plato)
 .then((response)=> {
   console.log(response);
 })
-const url=("../data.json")
-fetch(url)
-.then(response => response.json())
-.then(data=> mostrarPlatos(plato))
 
-  data.forEach(
-
-function mostrarPlatos(plato) {
-  console.log(plato);
+fetch("../carrito-Compras-main/data.json")
+.then(res => res.json())
+.then(data=>{mostrarPlatos(data);
+  mostrarPlatos(data)
+});
 
   plato.forEach(plato => console.log(plato));
   const card=document.createElement('div');
-  card.innerHTML= `
-        <img src="${plato.img}">
-        <div class ="plato-description"></div>
-        <h5>${plato.nombre}</h5>
-        <h6>${plato.categoria}</h6>
-        <p class="precio">$${plato.precio}</p>
-        <img src="./assets/img/carrito.png" class="carrito" alt="">
-        <button id='${plato.id}' class="btn-compra">COMPRAR</button>
-        </div>`
-contenedorPlatos.appendChild(card)
-});
+  
+contenedorPlatos.appendChild(card);
+
 const btnComprar=document.querySelectorAll('.btn-comprar');
 btnComprar.forEach(btn=>{
   btn.addEventListener('click',(e)=>agregarAlCarrito(e.platos));
 
 })
-
 function agregarAlCarrito(e, platos){
   console.log(platos);
   console.log(e.target.id)
