@@ -81,7 +81,6 @@ const plato = [
   },
 ];
 const carrito = [];
-
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
 const contenedorCarrito=document.querySelector("#contenedorCarrito");
 const mostrarPlatos = () => {
@@ -308,19 +307,33 @@ function solicitarPlato (plato){
     },3000);
   });
 }
- 
+contenedorPlatos = document.querySelector("#contenedorPlatos");
+
 solicitarPlato(plato)
 .then((response)=> {
   console.log(response);
 })
+const url=("../data.json")
+fetch(url)
+.then(response => response.json())
+.then(data=> mostrarPlatos(plato))
 
-//  const url= ("../data.json")
-//  fetch(url)
-//  .then(res => res.json())
-// .then(data=> console.log(data))
+  data.forEach(
 
-// function mostrarPlatos(plato) {
-//   console.log(plato);
-//   plato.forEach(plato => 
+function mostrarPlatos(plato) {
+  console.log(plato);
 
-// }
+  plato.forEach(plato => console.log(plato));
+  const card=document.createElement('div');
+  card.innerHTML= `
+        <img src="${plato.img}">
+        <div class ="plato-description"></div>
+        <h5>${plato.nombre}</h5>
+        <h6>${plato.categoria}</h6>
+        <p class="precio">$${plato.precio}</p>
+        <img src="./assets/img/carrito.png" class="carrito" alt="">
+        <button id='${plato.id}' class="btn-compra">COMPRAR</button>
+        </div>`
+contenedorPlatos.appendChild(card)
+});
+
