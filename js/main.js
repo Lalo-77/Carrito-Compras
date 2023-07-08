@@ -336,4 +336,16 @@ function mostrarPlatos(plato) {
         </div>`
 contenedorPlatos.appendChild(card)
 });
+const btnComprar=document.querySelectorAll('.btn-comprar');
+btnComprar.forEach(btn=>{
+  btn.addEventListener('click',(e)=>agregarAlCarrito(e.platos));
 
+})
+
+function agregarAlCarrito(e, platos){
+  console.log(platos);
+  console.log(e.target.id)
+}
+const platoElegido = plato.find(el =el.id===target.id)
+
+console.log(platoElegido);
