@@ -85,10 +85,10 @@ const carrito = [];
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
 const contenedorCarrito=document.querySelector("#contenedorCarrito");
 const mostrarPlatos = () => {
-  plato.forEach((plato) => {
-    const cardPlato = document.createElement("div");
-    cardPlato.setAttribute("id", "cardPlato");
-    cardPlato.innerHTML = `
+      plato.forEach((plato) => {
+const cardPlato = document.createElement("div");
+      cardPlato.setAttribute("id", "cardPlato");
+      cardPlato.innerHTML = `
         <img src="${plato.img}">
         <div class ="plato-description"></div>
         <h5>${plato.nombre}</h5>
@@ -284,5 +284,43 @@ input3.onchange = () => {console.log("se cambio de campo")};
 input4.onchange = () => {console.log("se cambio de campo")};
 
 
+ const pedirPlato = (pedido) => {
+  return new Promise ((resolve, reject)=> {
 
-     
+    setTimeout(() => {
+      if (pedido) {
+        resolve("Podes venir a retirar tu pedido");
+      }else{
+        reject("no hay guarnicion");
+      }
+    },1500);
+  });
+};
+
+function solicitarPlato (plato){
+ return new Promise ((resolve, reject) =>{
+   setTimeout(() => {
+     if (plato) {
+        resolve("plato");
+      }else{
+        reject("Error de conexion");
+      }
+    },3000);
+  });
+}
+ 
+solicitarPlato(plato)
+.then((response)=> {
+  console.log(response);
+})
+
+//  const url= ("../data.json")
+//  fetch(url)
+//  .then(res => res.json())
+// .then(data=> console.log(data))
+
+// function mostrarPlatos(plato) {
+//   console.log(plato);
+//   plato.forEach(plato => 
+
+// }
