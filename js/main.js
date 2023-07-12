@@ -99,7 +99,7 @@ const cardPlato = document.createElement("div");
 const btnComprar = document.querySelectorAll(".btn-compra");
         btnComprar.forEach((el) => {
         el.addEventListener("click", (e) => {
-        agregarAlCarrito(e.target.data);
+        agregarAlCarrito(e.target.id);
     });
   });
 };
@@ -110,36 +110,38 @@ const encontrado = array.find ((el) => {
     return encontrado
 }
 function agregarAlCarrito(id) {
-    console.log(id);
-    console.log(carrito);
-
-const existe = carrito.some((plato) => plato.id === parseInt (id));
-      console.log(existe);
-
-  if (existe) {
-const indice = carrito.findIndex( p => p.id === parseInt(id));
+  fetch("./data.json")
+  .then((res) => res.json())
+  .then((plato) => {
+  console.log(id);
+const existe = carrito.some((plato) => plato.id === parseInt(id));
+  console.log(existe);
+  
+    if (existe) {
+const indice = carrito.findIndex((p) => p.id === parseInt(id));
     carrito[indice].cantidad++;
 } else {
-let platoEncontrado = plato.find(p => p.id ==parseInt(id));
-        console.log(platoEncontrado);
-        carrito.push(({
-        id:platoEncontrado.id,
-        nombre:platoEncontrado.nombre,
-        precio:platoEncontrado.precio,
-        cantidad: 1,
-        categoria:platoEncontrado.categoria,
-        img:platoEncontrado.img,
-  }))
+let platoEncontrado = plato.find((p) => p.id == parseInt(id));
+  console.log(platoEncontrado);
+  carrito.push({
+  id: platoEncontrado.id,
+  nombre: platoEncontrado.nombre,
+  precio: platoEncontrado.precio,
+  cantidad: 1,
+  categoria: platoEncontrado.categoria,
+  img: platoEncontrado.img,
+});
   localStorage.setItem("carrito", JSON.stringify(carrito));
-  renderizarCarrito ()
+  renderizarCarrito();
 }
-const total =carrito.reduce((acc, el) =>acc + (el.precio * el.cantidad) , 0);
-    console.log(total);
-
-const mostrarTotal = document.getElementById("total")
-      mostrarTotal.innerText = total
-      localStorage.setItem("mostrarTotal", JSON.stringify(mostrarTotal));
-} 
+const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
+  console.log(total);
+  
+const mostrarTotal = document.getElementById("total");
+  mostrarTotal.innerText = total;
+  localStorage.setItem("mostrarTotal", JSON.stringify(mostrarTotal));
+});
+}
 const btnCrear=document.querySelector(".btn-crear");
       btnCrear.addEventListener("click", () =>{
       console.log("Enviaste tu pedido")
@@ -160,9 +162,6 @@ const cardPlato = document.createElement("div");
         `;
     contenedorCarrito.appendChild(cardPlato);
 
-agregarEveACard();
-
-
 const btnEliminar = document.getElementById(`btnEliminar-${plato.id}`)
       btnEliminar.addEventListener("click", () =>{
       eliminarDelCarrito(plato.id)
@@ -176,7 +175,6 @@ function eliminarDelCarrito(id){
 
     console.log("el plato " + id + " " + "se elimino");
 }
-
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
 const input = document.getElementById("input-ingreso");
@@ -283,13 +281,6 @@ const input4 = document.getElementById("pass");
       input3.onchange = () => {console.log("se cambio de campo")};
       input4.onchange = () => {console.log("se cambio de campo")};
 
-
-fetch("../data.json")
-.then(res => res.json())
-.then(data=>{mostrarPlatos(data);
-  mostrarPlatos(data)
-});
-
     plato.forEach(plato => console.log(plato));
 const card=document.createElement('div');
     contenedorPlatos.appendChild(card);
@@ -305,4 +296,11 @@ function agregarAlCarrito(e, platos){
 }
 const platoElegido = plato.find(el =el.id===target.id)
     console.log(platoElegido);
-    });
+
+      });
+fetch("./data.json")
+.then((res) => res.json())
+.then((data) => {
+  console.log(data);
+  mostrarPlatos(data);
+});
