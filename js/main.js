@@ -75,11 +75,12 @@ const btnCrear=document.querySelector(".btn-crear");
       });
 
 function renderizarCarrito(){
-  contenedorCarrito.innerHTML = ""
-    carrito.forEach( plato => {
+      contenedorCarrito.innerHTML = ""
+      carrito.forEach( plato => {
+        
 const cardPlato = document.createElement("div");
-    cardPlato.setAttribute("id","cardPlato");
-    cardPlato.innerHTML = `
+      cardPlato.setAttribute("id","cardPlato");
+      cardPlato.innerHTML = `
         <img src="${plato.img}" class="pl-img">
         <div class ="plato-descrip"></div>
         <h5 class ="pl-nombre">${plato.nombre}</h5>
@@ -89,7 +90,7 @@ const cardPlato = document.createElement("div");
         <button id='btnEliminar-${plato.id}' class="btn-borrar">ELIMINAR</button>
         </div>
         `;
-    contenedorCarrito.appendChild(cardPlato);
+      contenedorCarrito.appendChild(cardPlato);
 
 const btnEliminar = document.getElementById(`btnEliminar-${plato.id}`)
       btnEliminar.addEventListener("click", () =>{
@@ -97,12 +98,16 @@ const btnEliminar = document.getElementById(`btnEliminar-${plato.id}`)
   })
 })
 }
+
 const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
 
 function eliminarDelCarrito(id){
+const eliminarPlato = () => {
 
-    console.log("el plato " + id + " " + "se elimino");
+
+}
+      console.log("el plato " + id + " " + "se elimino");
 }
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
@@ -190,16 +195,13 @@ let option= select.options[select.selectedIndex].value
 })
 const btnTres=document.querySelector(".btnTres");
       btnTres.addEventListener("click", () =>{
-      console.log("Se envio tu pedido")
+      console.log("Tu compra fue exitosa")
 });
 const btnLimpiar=document.querySelector(".btnLimpiar");
       btnLimpiar.addEventListener("click", () =>{
       console.log("Se elimino el plato")
 });
-const btnEliminar=document.querySelector(".btn-borrar");
-      btnEliminar.addEventListener("click", () =>{
-      console.log("Se elimino el plato")
-});
+
 const input1 = document.getElementById("menu1");
 const input2 = document.getElementById("menu2");
       input1.onchange = () => {console.log("se cambio de campo")};
@@ -234,5 +236,4 @@ fetch("./data.json")
   mostrarPlatos(data);
 });
 
-
-renderizarCarrito();
+renderizarCarrito()
