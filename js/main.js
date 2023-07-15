@@ -78,9 +78,9 @@ function renderizarCarrito(){
       contenedorCarrito.innerHTML = ""
       carrito.forEach( plato => {
         
-const cardPlato = document.createElement("div");
-      cardPlato.setAttribute("id","cardPlato");
-      cardPlato.innerHTML = `
+    const cardPlato = document.createElement("div");
+          cardPlato.setAttribute("id","cardPlato");
+          cardPlato.innerHTML = `
         <img src="${plato.img}" class="pl-img">
         <div class ="plato-descrip"></div>
         <h5 class ="pl-nombre">${plato.nombre}</h5>
@@ -98,13 +98,17 @@ const btnEliminar = document.getElementById(`btnEliminar-${plato.id}`)
   })
 })
 }
-
+function borrarPlato () {
+        borrarPlato.querySelector("div").innerHTML= "";
+}
 const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
 
 function eliminarDelCarrito(id){
 const eliminarPlato = () => {
 
+const platoFliltrado =plato.filter(plato=>plato.tipo === 'nenosGrasa');
+      console.log(platoFliltrado);
 
 }
       console.log("el plato " + id + " " + "se elimino");
