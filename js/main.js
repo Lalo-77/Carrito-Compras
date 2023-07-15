@@ -100,6 +100,8 @@ const btnEliminar = document.getElementById(`btnEliminar-${plato.id}`)
 }
 function borrarPlato () {
         borrarPlato.querySelector("div").innerHTML= "";
+        carrito.splice(0,carrito.length)
+        localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
