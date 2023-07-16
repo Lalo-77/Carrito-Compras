@@ -60,6 +60,13 @@ let platoEncontrado = plato.find((p) => p.id == parseInt(id));
   localStorage.setItem("carrito", JSON.stringify(carrito));
   renderizarCarrito();
 }
+precioCarrito()
+  });
+}
+
+// precio del carrito
+
+function precioCarrito() {
 
 const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
   console.log(total);
@@ -67,8 +74,8 @@ const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 const mostrarTotal = document.getElementById("total");
   mostrarTotal.innerText = total;
   localStorage.setItem("mostrarTotal", JSON.stringify(mostrarTotal));
-});
-}
+};
+
 const btnCrear=document.querySelector(".btn-crear");
       btnCrear.addEventListener("click", () =>{
       console.log("Enviaste tu pedido")
@@ -78,9 +85,9 @@ function renderizarCarrito(){
       contenedorCarrito.innerHTML = ""
       carrito.forEach( plato => {
         
-    const cardPlato = document.createElement("div");
-          cardPlato.setAttribute("id","cardPlato");
-          cardPlato.innerHTML = `
+const cardPlato = document.createElement("div");
+      cardPlato.setAttribute("id","cardPlato");
+      cardPlato.innerHTML = `
         <img src="${plato.img}" class="pl-img">
         <div class ="plato-descrip"></div>
         <h5 class ="pl-nombre">${plato.nombre}</h5>
@@ -103,18 +110,25 @@ function borrarPlato () {
         carrito.splice(0,carrito.length)
         localStorage.setItem("carrito",JSON.stringify(carrito));
 }
+
 const inputs=document.querySelectorAll("input");
 const compraTotal =("renderizarCarrito");
 
+//function eliminar plato
+
 function eliminarDelCarrito(id){
-const eliminarPlato = () => {
-
-const platoFliltrado =plato.filter(plato=>plato.tipo === 'nenosGrasa');
-      console.log(platoFliltrado);
-
+  
+  const platoFliltrado = carrito.find(plato=>plato.id === id);
+  console.log(platoFliltrado);
+  const index = carrito.indexOf(platoFliltrado)
+  console.log(index);
+  carrito.splice(index, 1)
+  
+  console.log("el plato " + id + " " + "se elimino");
+  renderizarCarrito()
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-      console.log("el plato " + id + " " + "se elimino");
-}
+
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
 const input = document.getElementById("input-ingreso");
@@ -229,7 +243,7 @@ const btnComprar=document.querySelectorAll('.btn-comprar');
 })
 function agregarAlCarrito(e, platos){
     console.log(platos);
-    console.log(e.target.id)
+    console.log(e.target.id) 
 }
 const platoElegido = plato.find(el =el.id===target.id)
     console.log(platoElegido);
