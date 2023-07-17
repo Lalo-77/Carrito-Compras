@@ -10,45 +10,44 @@
         <link rel="shortcut icon" href="./assets/img/escudo-la-fortaleza.png" type="image/x-icon">
         <link rel="stylesheet" href="./css/style.css">
     </head>
-    <body class="mostrador">
-        <div class="encab">
-            <div class="row">
-                <div class="columnas">
-                    <span id="logo"></span>
-                    <img  class="escudo"  src="../assets/img/escudo-la-fortaleza.png">
-                    <a href=>LA FORTALEZA</a>
-                </div>
-            <div class="columnas u-pull-right"> </div>
+    <body class= div class="grid-container" > 
+        <header class="encab">
+            <div class="logo">
+                <img  class="escudo"  src="../assets/img/escudo-la-fortaleza.png">
+                <a href=>LA FORTALEZA</a>
             </div>
-        </div>
-        <header>
+            <nav>
+                <ul class="navbar"  >
+                    <li>
+                        <a href= "./pages/registro.html" class="reg" >REGISTRO</a>
+                    </li>
+                    <li class="car">
+                    <img class="irCarrito" src="./assets/img/carritoCompras.png"><a href="./pages/Carrito.html"></a></li>
+                    <span id="totalCarrito" alt="Total" > 0 </span>
+                </ul>    
+            </nav>
         </header>
-        <main class="igual">
         <section class="titulo">
             <h1>RESTAURANT LA FORTALEZA</h1>
         </section>
-        <section class="menu">
+        <main class="igual">
+            <section class="menu">
                     <h2>NUESTRO MENU: Alimentos Naturales</h2>
-        </section>
-        <section id="datos">
+            </section>
+            <section id="datos">
                     <label for="Ingreso" id="bsc">Ingrese el plato a buscar</label>
                     <input name="ingreso" id="input-ingreso" placeholder="Ingrese el plato">
                     <button type="submit"id="btn-busc" name="buscar" class="busc" >BUSCAR</button>
-                    <div class="reg">
-                        <a href="./pages/registro.html" class="registro">REGISTRO</a>
-                        <a href="./pages/Carrito.html" class="irCarrito"></a>
-                    </div>
                     </input>
-        </section>
-        <section>
+            </section>
+            <section>
             <div id="contenedorPlatos">
-        </section>
-        <section class="dtos">
+            </section>
+            <section class="dtos">
                 <div class="uuno">
                     <div class="carrito">
                         <h3>Carrito de Compras </h3>
                     </div>
-                    <legend class="datper"></legend>
                     <div class="cuentas">
                         <div class="cobrar">
                             <div id="Carrito"></div>
@@ -125,20 +124,19 @@
         </section>
         </main>
         <footer class="pie">
-        <nav class="datos">
+            <div class="datos">
             <p>Alumno: Cristian Nuñez</p>
             <p>Santa Fe</p>
             <p>1° Mayo 1376</p>
-        </nav>
-        <div class="redes-sociales">
+            </div>
+            <div class="redes-sociales">
             <a href=""><img src="../assets/img/instagram.png" alt=""></a>
-            <a
-                href="https://wa.me/543425621434?text=te%20comunicaste%20con%20Resto%20La%20Fortaleza:%0A%0ADejanos%20tu%20pedido%20en%20brebe%20lo%20tomaremos,%20y%20te%20estaremos%20contactando.%20%0A%20"><img
+            <a href="https://wa.me/543425621434?text=te%20comunicaste%20con%20Resto%20La%20Fortaleza:%0A%0ADejanos%20tu%20pedido%20en%20brebe%20lo%20tomaremos,%20y%20te%20estaremos%20contactando.%20%0A%20"><img
                     src="../assets/img/whatsapp.png" alt=""></a>
             <a href="https://www.facebook.com/profile.php?id=100069610990965&mibextid=ZbWKwL"><img
                     src="../assets/img/facebook.png" alt=""></a>
             <a href=""><img src="../assets/img/twiter.png" alt=""></a>
-        </div>
+            </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
