@@ -2,66 +2,66 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
 const contenedorCarrito=document.querySelector("#contenedorCarrito");
 const mostrarPlatos = (data) => { 
-    data.forEach((plato) => {
+      data.forEach((plato) => {
 
 const cardPlato = document.createElement("div");
       cardPlato.setAttribute("id", "cardPlato");
       cardPlato.innerHTML = `
-        <img src="${plato.img}">
-        <div class ="plato-description"></div>
-        <h5>${plato.nombre}</h5>
-        <h6>${plato.categoria}</h6>
-        <p class="precio">$${plato.precio}</p>
-        <img src="./assets/img/carrito.png" class="carrito" alt="">
-        <button id='${plato.id}' class="btn-compra">COMPRAR</button>
-        </div>
-        `;
-    contenedorPlatos.appendChild(cardPlato);
-  });
+            <img src="${plato.img}">
+            <div class ="plato-description"></div>
+            <h5>${plato.nombre}</h5>
+            <h6>${plato.categoria}</h6>
+            <p class="precio">$${plato.precio}</p>
+            <img src="./assets/img/carrito.png" class="carrito" alt="">
+            <button id='${plato.id}' class="btn-compra">COMPRAR</button>
+            </div>
+            `;
+      contenedorPlatos.appendChild(cardPlato);
+});
 const btnComprar = document.querySelectorAll(".btn-compra");
-        btnComprar.forEach((el) => {
-        el.addEventListener("click", (e) => {
-        agregarAlCarrito(e.target.id);
-    });
-  });
+      btnComprar.forEach((el) => {
+      el.addEventListener("click", (e) => {
+      agregarAlCarrito(e.target.id);
+      });
+});
 };
 function buscarPlato(array,filtro){
 const encontrado = array.find ((el) => {
       return el.nombre.includes(filtro);
-  });
-    return encontrado
+});
+      return encontrado
 }
 
 function agregarAlCarrito(id) {
-  fetch("./data.json")
-  .then((res) => res.json())
+fetch("./data.json")
+.then((res) => res.json())
   .then((plato) => {
-  console.log(id);
+console.log(id);
 
 const existe = carrito.some((plato) => plato.id === parseInt(id));
-  console.log(existe);
-  
-    if (existe) {
+      console.log(existe);
+
+      if (existe) {
 
 const indice = carrito.findIndex((p) => p.id === parseInt(id));
-    carrito[indice].cantidad++;
+      carrito[indice].cantidad++;
 } else {
 
 let platoEncontrado = plato.find((p) => p.id == parseInt(id));
-  console.log(platoEncontrado);
-  carrito.push({
-  id: platoEncontrado.id,
-  nombre: platoEncontrado.nombre,
-  precio: platoEncontrado.precio,
-  cantidad: 1,
-  categoria: platoEncontrado.categoria,
-  img: platoEncontrado.img,
+      console.log(platoEncontrado);
+      carrito.push({
+      id: platoEncontrado.id,
+      nombre: platoEncontrado.nombre,
+      precio: platoEncontrado.precio,
+      cantidad: 1,
+      categoria: platoEncontrado.categoria,
+      img: platoEncontrado.img,
 });
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  renderizarCarrito();
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      renderizarCarrito();
 }
 precioCarrito()
-  });
+      });
 }
 
 // precio del carrito
@@ -69,11 +69,11 @@ precioCarrito()
 function precioCarrito() {
 
 const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
-  console.log(total);
-  
+      console.log(total);
+
 const mostrarTotal = document.getElementById("total");
-  mostrarTotal.innerText = total;
-  localStorage.setItem("mostrarTotal", JSON.stringify(mostrarTotal));
+      mostrarTotal.innerText = total;
+      localStorage.setItem("mostrarTotal", JSON.stringify(mostrarTotal));
 };
 
 const btnCrear=document.querySelector(".btn-crear");
@@ -84,31 +84,31 @@ const btnCrear=document.querySelector(".btn-crear");
 function renderizarCarrito(){
       contenedorCarrito.innerHTML = ""
       carrito.forEach( plato => {
-        
+
 const cardPlato = document.createElement("div");
       cardPlato.setAttribute("id","cardPlato");
       cardPlato.innerHTML = `
-        <img src="${plato.img}" class="pl-img">
-        <div class ="plato-descrip"></div>
-        <h5 class ="pl-nombre">${plato.nombre}</h5>
-        <h6 class="pl-categoria">${plato.categoria}</h6>
-        <p class="pl-precio">$${plato.precio}</p>
-        <img src="./assets/img/carrito.png" class="carrito" alt="">
-        <button id='btnEliminar-${plato.id}' class="btn-borrar">ELIMINAR</button>
-        </div>
-        `;
+            <img src="${plato.img}" class="pl-img">
+            <div class ="plato-descrip"></div>
+            <h5 class ="pl-nombre">${plato.nombre}</h5>
+            <h6 class="pl-categoria">${plato.categoria}</h6>
+            <p class="pl-precio">$${plato.precio}</p>
+            <img src="./assets/img/carrito.png" class="carrito" alt="">
+            <button id='btnEliminar-${plato.id}' class="btn-borrar">ELIMINAR</button>
+            </div>
+            `;
       contenedorCarrito.appendChild(cardPlato);
 
 const btnEliminar = document.getElementById(`btnEliminar-${plato.id}`)
       btnEliminar.addEventListener("click", () =>{
       eliminarDelCarrito(plato.id)
-  })
+      })
 })
 }
 function borrarPlato () {
-        borrarPlato.querySelector("div").innerHTML= "";
-        carrito.splice(0,carrito.length)
-        localStorage.setItem("carrito",JSON.stringify(carrito));
+      borrarPlato.querySelector("div").innerHTML= "";
+      carrito.splice(0,carrito.length)
+      localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 
 const inputs=document.querySelectorAll("input");
@@ -117,16 +117,16 @@ const compraTotal =("renderizarCarrito");
 //function eliminar plato
 
 function eliminarDelCarrito(id){
-  
-  const platoFliltrado = carrito.find(plato=>plato.id === id);
-  console.log(platoFliltrado);
-  const index = carrito.indexOf(platoFliltrado)
-  console.log(index);
-  carrito.splice(index, 1)
-  
-  console.log("el plato " + id + " " + "se elimino");
-  renderizarCarrito()
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+const platoFliltrado = carrito.find(plato=>plato.id === id);
+      console.log(platoFliltrado);
+const index = carrito.indexOf(platoFliltrado)
+      console.log(index);
+      carrito.splice(index, 1)
+
+      console.log("el plato " + id + " " + "se elimino");
+      renderizarCarrito()
+      localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 const btnBusc=document.querySelector("#btn-busc")
@@ -134,30 +134,31 @@ const btnBusc=document.querySelector("#btn-busc")
 const input = document.getElementById("input-ingreso");
 const menu = buscarPlato(plato, input.value);
 	console.log(menu);
-  });
+});
 const inputUser = document.querySelector("#user"),
-    inputPass = document.querySelector("#pass"),
-    check = document.querySelector("#check"),
-    formulario = document.querySelector("#form-login"),
-    message = document.querySelector("#message");
+      inputPass = document.querySelector("#pass"),
+      check = document.querySelector("#check"),
+      formulario = document.querySelector("#form-login"),
+      message = document.querySelector("#message");
 
 function guardar(valor) {
 const user = { usuario: inputUser.value, pass: inputPass.value };
+
 if(valor === "sessionStorage") {
-    sessionStorage.setItem("user", JSON.stringify(user));
-  }
+            sessionStorage.setItem("user", JSON.stringify(user));
+}
 if(valor === "localStorage") {
       localStorage.setItem("user", JSON.stringify(user));
-  }
-  return user;
+}
+      return user;
 }
 function recuperarDatos(datos) {
-  if(datos) {
+if(datos) {
 
-    datos && ((inputUser.value=datos.usuario),(inputPass.value=datos.usuario))
-  }
+      datos && ((inputUser.value=datos.usuario),(inputPass.value=datos.usuario))
+      }
 }
-    recuperarDatos(JSON.parse(localStorage.getItem("user")));
+      recuperarDatos(JSON.parse(localStorage.getItem("user")));
 
 const btnUser= document.getElementById("input-user")
 const btnPass= document.getElementById("input-pass")
@@ -171,12 +172,12 @@ function validarDatos(e){
 const usuario= {
       nombre:inputUser.value,
       pass:inputPass.value,
-  }
+      }
 }
 const btnPedido=document.querySelector("#btnPedido");
       btnPedido.addEventListener("click", () =>{
       console.log("Enviaste tu pedido")
-    
+
 function agregarEveACard(){
 
 const cardPlato=document.querySelector("#cardPlato");
@@ -184,19 +185,19 @@ const cardPlato=document.querySelector("#cardPlato");
 }
 const inputIngreso=inputs[0];
 
-    btnBusc.addEventListener("click", () =>{
+      btnBusc.addEventListener("click", () =>{
 
-    cardPlato.innerHTML = `<h1>${inputIngreso.value}</h1>`
+      cardPlato.innerHTML = `<h1>${inputIngreso.value}</h1>`
 })
 const menu1 = inputs[1];
 const menu2 = inputs[2];
 
 const metodos =[
-  "Efectivo",
-  "Debito",
-  "Tarjeta visa",
-  "Tarjeta Santa Fe",
-  "Otro"
+      "Efectivo",
+      "Debito",
+      "Tarjeta visa",
+      "Tarjeta Santa Fe",
+      "Otro"
 ];
 const select = document.querySelector("select");
       metodos.forEach(metodo =>{
@@ -208,14 +209,20 @@ let option=document.createElement("option")
 
       select.appendChild(option)
 })
-    select.addEventListener("change", ()=> {
+      select.addEventListener("change", ()=> {
 
-let option= select.options[select.selectedIndex].value
-    console.log(option);
+let   option= select.options[select.selectedIndex].value
+      console.log(option);
 })
 const btnTres=document.querySelector(".btnTres");
       btnTres.addEventListener("click", () =>{
-      console.log("Tu compra fue exitosa")
+            Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'Tu  compra se efectuo con exito',
+                  showConfirmButton: false,
+                  timer: 1500
+            })
 });
 const btnLimpiar=document.querySelector(".btnLimpiar");
       btnLimpiar.addEventListener("click", () =>{
@@ -232,28 +239,29 @@ const input4 = document.getElementById("pass");
       input3.onchange = () => {console.log("se cambio de campo")};
       input4.onchange = () => {console.log("se cambio de campo")};
 
-    plato.forEach(plato => console.log(plato));
+      plato.forEach(plato => console.log(plato));
+
 const card=document.createElement('div');
-    contenedorPlatos.appendChild(card);
+      contenedorPlatos.appendChild(card);
 
 const btnComprar=document.querySelectorAll('.btn-comprar');
-    btnComprar.forEach(btn=>{
-    btn.addEventListener('click',(e)=>agregarAlCarrito(e.platos));
+      btnComprar.forEach(btn=>{
+      btn.addEventListener('click',(e)=>agregarAlCarrito(e.platos));
 
 })
 function agregarAlCarrito(e, platos){
-    console.log(platos);
-    console.log(e.target.id) 
+      console.log(platos);
+      console.log(e.target.id) 
 }
 const platoElegido = plato.find(el =el.id===target.id)
-    console.log(platoElegido);
+      console.log(platoElegido);
 
       });
 fetch("./data.json")
 .then((res) => res.json())
 .then((data) => {
-  console.log(data);
-  mostrarPlatos(data);
+      console.log(data);
+      mostrarPlatos(data);
 });
 
-renderizarCarrito()
+      renderizarCarrito()
