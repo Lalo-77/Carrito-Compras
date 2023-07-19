@@ -46,28 +46,8 @@
             </section>
             <section class="dtos">
                 <div class="uuno">
-                    <div class="carrito">
-                        <h3>Carrito de Compras </h3>
-                    </div>
                     <div class="cuentas">
-                                <h4 class="metPago">Como vas a Pagar?</h4>
-                                <select name="metodo" id="metodoPago">
-                                    <option value="Default">Seleccione un metodo de pago</option>
-                                </select>
-                                <form class="pago">
-                                    <label for="efectivo" class="efectivo">
-                                        
-                                    </label>
-                                    <label for="debito" class="debito">
-                                    
-                                    </label>    
-                                    <label for="tarjeta" class="tarjeta">
-                                    
-                                    </label>
-                                    <label for="santa_fe" class="santa_fe">
-                                        
-                                    </label>
-                                    
+                                
                                     <button type="button" name="btnPedido" id="btnPedido">ENVIAR</button>
 
                                     <button type="reset" name="btnLimpiar" class="btnLimpiar">LIMPIAR</button>
@@ -103,13 +83,31 @@
                 </div>
                 <div class="tres">
                     <label id="trz">
-                        <h3>Carrito</h3>
+                        <h3 class="carComp">Carrito de Compras</h3>
                         <p>Total:$<span id="total">0</span></p>
-                        <button type="submit"name="btnTres" class="btnTres"><a href="./pages/Carrito.html"  class="irCarrito" >FINALIZAR COMPRA</a></button>
+                        <h4 class="metPago">Como vas a Pagar?</h4>
+                        <select name="metodo" id="metodoPago">
+                            <option value="Default">Seleccione un metodo de pago</option>
+                        </select>
+                        <form class="pago">
+                            <label for="efectivo" class="efectivo">
+                                
+                            </label>
+                            <label for="debito" class="debito">
+                            
+                            </label>    
+                            <label for="tarjeta" class="tarjeta">
+                            
+                            </label>
+                            <label for="santa_fe" class="santa_fe">
+                                
+                            </label>
+                        </form>
                     </label>
                     <div class="card">
                         <div id="contenedorCarrito"></div>
                     </div>
+                    <button type="submit"name="btnTres" class="btnTres"><a href="./pages/Carrito.html"  class="irCarrito" >FINALIZAR COMPRA</a></button>
                 </div>
         </section>
         </main>
