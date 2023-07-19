@@ -33,9 +33,9 @@ const encontrado = array.find ((el) => {
 }
 
 function agregarAlCarrito(id) {
-fetch("./data.json")
-.then((res) => res.json())
-  .then((plato) => {
+      fetch("./data.json")
+      .then((res) => res.json())
+      .then((plato) => {
 console.log(id);
 
 const existe = carrito.some((plato) => plato.id === parseInt(id));
@@ -174,17 +174,7 @@ const usuario= {
       pass:inputPass.value,
       }
 }
-const btnPedido=document.querySelector("#btnPedido");
-      btnPedido.addEventListener("click", () =>{
-      console.log("Enviaste tu pedido")
-
-function agregarEveACard(){
-
-const cardPlato=document.querySelector("#cardPlato");
-      cardPlato.addEventListener('mouseover',() =>{});
-}
 const inputIngreso=inputs[0];
-
       btnBusc.addEventListener("click", () =>{
 
       cardPlato.innerHTML = `<h1>${inputIngreso.value}</h1>`
@@ -229,11 +219,6 @@ const btnLimpiar=document.querySelector(".btnLimpiar");
       console.log("Se elimino el plato")
 });
 
-const input1 = document.getElementById("menu1");
-const input2 = document.getElementById("menu2");
-      input1.onchange = () => {console.log("se cambio de campo")};
-      input2.onchange = () => {console.log("se cambio de campo")};
-
 const input3 = document.getElementById("user");
 const input4 = document.getElementById("pass");
       input3.onchange = () => {console.log("se cambio de campo")};
@@ -256,7 +241,6 @@ function agregarAlCarrito(e, platos){
 const platoElegido = plato.find(el =el.id===target.id)
       console.log(platoElegido);
 
-      });
 fetch("./data.json")
 .then((res) => res.json())
 .then((data) => {
