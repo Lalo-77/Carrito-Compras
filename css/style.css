@@ -432,6 +432,16 @@ grid-template-areas:
     height: 40px;
     margin: 10px;
     border-radius: 10px;
+    text-decoration: none;
+}
+.cta{
+    color:black;
+    background-color: greenyellow;
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    text-decoration: none;
 }
 .btn-crear{
     color:black;

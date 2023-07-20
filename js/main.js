@@ -1,7 +1,9 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const contenedorPlatos = document.querySelector("#contenedorPlatos");
 const contenedorCarrito=document.querySelector("#contenedorCarrito");
+
 const mostrarPlatos = (data) => { 
+      contenedorPlatos.innerHTML = "";
       data.forEach((plato) => {
 
 const cardPlato = document.createElement("div");
@@ -129,12 +131,20 @@ const index = carrito.indexOf(platoFliltrado)
       renderizarCarrito()
       localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
 const input = document.getElementById("input-ingreso");
-const menu =(input.value);
-	console.log(menu);
+const platoBusqueda = input.value.toLowerCase();
+	console.log(platoBusqueda);
+
+fetch("./data.json")
+.then((res) => res.json())
+.then((data) => {
+
+const arrayFiltrado = data.filter(p => p.nombre.toLowerCase() === platoBusqueda);
+      console.log(arrayFiltrado);
+     mostrarPlatos(arrayFiltrado);
+   });
 });
 const inputUser = document.querySelector("#user"),
       inputPass = document.querySelector("#pass"),
@@ -165,7 +175,9 @@ const btnUser= document.getElementById("input-user")
 const btnPass= document.getElementById("input-pass")
 
 const btnIngresar=document.getElementById("btn-ingresar")
-      btnIngresar.addEventListener("click", validarDatos);
+      btnIngresar.addEventListener("click", validarDatos, () =>{
+      console.log("Ingresaste a tu cuenta")
+      });
 
 function validarDatos(e){
       e.preventDefault();
@@ -212,10 +224,9 @@ const btnTres=document.querySelector(".btnTres");
                   icon: 'success',
                   title: 'Tu  compra se efectuo con exito',
                   showConfirmButton: false,
-                  timer: 5000
+                  timer: 5000,
             })
 });
-
 const input3 = document.getElementById("user");
 const input4 = document.getElementById("pass");
       input3.onchange = () => {console.log("se cambio de campo")};
