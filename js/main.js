@@ -174,11 +174,6 @@ if(datos) {
 const btnUser= document.getElementById("input-user")
 const btnPass= document.getElementById("input-pass")
 
-const btnIngresar=document.getElementById("btn-ingresar")
-      btnIngresar.addEventListener("click", validarDatos, () =>{
-      console.log("Ingresaste a tu cuenta")
-      });
-
 function validarDatos(e){
       e.preventDefault();
 

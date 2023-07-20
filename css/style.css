@@ -32,6 +32,9 @@ nav{
 .navbar li a:hover{
     color:red;
 }
+.nombre-rest{
+    color: white;
+}
 a{
     list-style: none;
 } 
@@ -74,7 +77,6 @@ a{
 .car{
     width: 50px;
     height: 50px;
-
 }
 #totalCarrito{
     background-color: brown;
@@ -102,6 +104,15 @@ a{
     height: 70px;
     grid-area: encab;
     justify-content:space-between;
+}
+.entrar{
+    color:black;
+    background-color: greenyellow;
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    list-style-type: none;
 }
 .mostrador{
     display: grid;
@@ -627,6 +638,14 @@ grid-template-areas:
     font-family: 'Roboto', sans-serif;
 }
 .btncrearCta{
+    color:black;
+    background-color:darkorange;
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.btn-guardar{
     color:black;
     background-color:darkorange;
     width: 120px;
