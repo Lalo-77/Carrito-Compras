@@ -122,8 +122,8 @@ a{
 }
 .igual{
     grid-area:igual;
-    width:2000px;
-    height: 1400px;
+    width:1000px;
+    height: 3000px;
 }
 .pie{
     grid-area: pie;
@@ -172,7 +172,7 @@ h1{
     flex-direction: row;
     grid-area: contenedorPlatos;
     width:100%;
-    height: 100%;
+    height: 2000px;
     margin: 10px;
     margin-left: 20px;
 }
@@ -190,7 +190,7 @@ h1{
 #cardPlato{
     width: 310px;
     height:470px;
-}  
+}   
 .plato-description{
     color:black;
     width: 300px;
@@ -267,44 +267,33 @@ h6{
 width: 100%;
 height: 100vh;
 grid-template-columns: repeat(4, 1fr);
-grid-template-rows: repeat (3, 500px);
+grid-template-rows: repeat (2, 500px);
 grid-template-areas:
 "uuno uuno doss doss"
 "uuno uuno doss doss"
-"tres tres tres tres"
 ;
 }
 .dtos{
     display: flex;
+    align-content: center;
     flex-direction: row;
-    width: 849px;
-    height: 500px;
+    width: 1600px;
+    height: 1000px;
     padding-right: 40px;
-}
-.uuno{
-    grid-area: uuno;
-    display:flex;
-    flex-direction: column;
-    width: 500px;
-    height: 540px;
-    color:blanchedalmond;
-    background-color: burlywood;
-    margin-left: 70px;
-    padding-bottom: 10px;
 }
 .doss{
     color: blanchedalmond;
     grid-area: doss;
     display:flex;
     flex-direction: column;
-    width: 500px;
-    height: 700px;
+    width: 800px;
+    height: 640px;
     background-color:burlywood;
 }
 .doss h2{
     text-align: center;
     color:blanchedalmond;
-    width: 500px;
+    width: 800px;
     height: 50px;
     font-weight: 40px;
     font-size: 30px;
@@ -317,11 +306,6 @@ grid-template-areas:
     flex-direction: row;
     width: 500px;
     height: 50px;
-}
-.cuentas{
-    width: 815px;
-    height: 287px;
-    margin-top: 50px;
 }
 .cja{
     width: 815px;
@@ -444,7 +428,7 @@ grid-template-areas:
 #btn-ingresar{
     color:black;
     background-color: greenyellow;
-    width: 100px;
+    width: 110px;
     height: 40px;
     margin: 10px;
     border-radius: 10px;
@@ -452,7 +436,7 @@ grid-template-areas:
 .btn-crear{
     color:black;
     background-color: greenyellow;
-    width: 120px;
+    width: 110px;
     height: 40px;
     margin: 10px;
     border-radius: 10px;
@@ -470,22 +454,23 @@ grid-template-areas:
 .filter {
     display:none;
 }
-.tres{
+.uuno{
+    grid-area: doss;
     background-color:burlywood;
     display: flex;
     flex-direction: column;
     color: blanchedalmond;
     text-align: center;
-    width:500px;
-    height: 700px;
+    width:800px;
+    height: 1000px;
     font-size: 20px;
     font-weight: 30px;
     font-family: 'Roboto', sans-serif;
 }
-.tres h3{
+.uuno h3{
     background-color: darkorange;
     color: blanchedalmond;
-    width: 500px;
+    width: 800px;
     height: 50px;
     border-radius: 50px;
     font-weight: 30px;
@@ -548,13 +533,15 @@ grid-template-areas:
 }
 #datos{
     margin-left: 800px;
+    width: 100%;
+    height: 100px;
 }
 #contenedorCarrito{
     background-color:burlywood;
     color:black;
     text-align: center;
-    width:500px;
-    height:300px;
+    width:800px;
+    height:700px;
     font-size: 30px;
     font-weight: 40px;
     font-family: 'Roboto', sans-serif;
@@ -616,7 +603,7 @@ grid-template-areas:
 }
 #trz{
     width: 500px;
-    height: 200px;
+    height: 350px;
     font-weight: 20px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
@@ -625,8 +612,8 @@ grid-template-areas:
     background-color:burlywood;
     color: blanchedalmond;
     text-align: center;
-    font-weight: 20px;
-    font-size: 20px;
+    font-weight: 30px;
+    font-size: 30px;
     font-family: 'Roboto', sans-serif;
 }
 .btncrearCta{
@@ -657,9 +644,10 @@ grid-template-areas:
     margin-left: 40px;
 }
 .card{
-    width: 500px;
-    height: 400px;
+    width: 800px;
+    height: 650px;
     border-color: black;
+    padding-bottom: 10px;
 }
 body.registro{
         background-color: #85FFBD;

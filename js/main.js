@@ -29,9 +29,10 @@ function buscarPlato(array,filtro){
 const encontrado = array.find ((el) => {
       return el.nombre.includes(filtro);
 });
-      return encontrado
-}
+      fetch("./data.json")
 
+      const menu = buscarPlato(inputs.value);
+}
 function agregarAlCarrito(id) {
       fetch("./data.json")
       .then((res) => res.json())
@@ -89,7 +90,7 @@ const cardPlato = document.createElement("div");
       cardPlato.setAttribute("id","cardPlato");
       cardPlato.innerHTML = `
             <img src="${plato.img}" class="pl-img">
-            <div class ="plato-descrip"></div>
+            <div class ="plato-descrip">
             <h5 class ="pl-nombre">${plato.nombre}</h5>
             <h6 class="pl-categoria">${plato.categoria}</h6>
             <p class="pl-precio">$${plato.precio}</p>
@@ -132,7 +133,7 @@ const index = carrito.indexOf(platoFliltrado)
 const btnBusc=document.querySelector("#btn-busc")
       btnBusc.addEventListener("click", () => {
 const input = document.getElementById("input-ingreso");
-const menu = buscarPlato(plato, input.value);
+const menu =(input.value);
 	console.log(menu);
 });
 const inputUser = document.querySelector("#user"),
@@ -211,12 +212,8 @@ const btnTres=document.querySelector(".btnTres");
                   icon: 'success',
                   title: 'Tu  compra se efectuo con exito',
                   showConfirmButton: false,
-                  timer: 1500
+                  timer: 5000
             })
-});
-const btnLimpiar=document.querySelector(".btnLimpiar");
-      btnLimpiar.addEventListener("click", () =>{
-      console.log("Se elimino el plato")
 });
 
 const input3 = document.getElementById("user");
@@ -224,7 +221,6 @@ const input4 = document.getElementById("pass");
       input3.onchange = () => {console.log("se cambio de campo")};
       input4.onchange = () => {console.log("se cambio de campo")};
 
-      plato.forEach(plato => console.log(plato));
 
 const card=document.createElement('div');
       contenedorPlatos.appendChild(card);
@@ -234,12 +230,6 @@ const btnComprar=document.querySelectorAll('.btn-comprar');
       btn.addEventListener('click',(e)=>agregarAlCarrito(e.platos));
 
 })
-function agregarAlCarrito(e, platos){
-      console.log(platos);
-      console.log(e.target.id) 
-}
-const platoElegido = plato.find(el =el.id===target.id)
-      console.log(platoElegido);
 
 fetch("./data.json")
 .then((res) => res.json())
@@ -247,5 +237,4 @@ fetch("./data.json")
       console.log(data);
       mostrarPlatos(data);
 });
-
       renderizarCarrito()
